@@ -1,10 +1,10 @@
 @extends('base')
 @section('content')
 <div class="mt-3 d-flex justify-content-center">
-  <h4>Reading Links</h4>
+  <h4>All Reading</h4>
 </div>
 
-<a href="{{route('admin.readlink')}}" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Reading Link</button></a>
+<a href="" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Reading Link</button></a>
 
 
 <div id="abcd" class="align-items-center" style="margin-left: 35%; margin-right:35%;">
@@ -36,18 +36,18 @@
         </thead>
         <tbody>
             <tr>
-            @foreach($read as $items)
-            <td>{{$items->id}}</td>
+          
+            <td></td>
             
-            <td>{{$items->name}}</td>
-            <td>{{$items->r_link}}</td>
+            <td></td>
+            <td></td>
             <td>
               
-                <a href="{{route('admin.deleteRead',['id' => $items->id])}}"><button class="bg-danger ">Delete</button></a>
-                <a href="{{route('admin.editReadLink',['id'=>$items->id])}}"><button class="bg-primary">Edit</button></a>
+                <a href=""><button class="bg-danger ">Delete</button></a>
+                <a href=""><button class="bg-primary">Edit</button></a>
             </td>
         </tr>
-            @endforeach
+            {{-- @endforeach --}}
         </tbody>
       </table>
 </div>

@@ -38,7 +38,7 @@
         
       </div><br>
 
-      <div class="row col-12">
+      {{-- <div class="row col-12">
         <div class="col-5 text-center">
           <label for="readLink " class="p-2">
             Reading Link<span class="text-danger">*</span>
@@ -56,7 +56,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-      </div><br>
+      </div><br> --}}
 
       <div class="row col-12">
         <div class="col-5 text-center">

@@ -33,9 +33,9 @@
                     <li class="nav-item">
                       <a class="nav-link fw-bold" href="{{route('logincheck')}}" >Country Guidelines</a>
                     </li>     
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link fw-bold" href="{{route('admin.showTestPage')}}" >Proficency Test</a>
-                    </li>                 
+                    </li>                  --}}
                         @endauth   
 
                   </ul>                 
