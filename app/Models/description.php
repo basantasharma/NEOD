@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+
+class description extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'descriptions',
+        'sub_id'
+    ];
+    protected $table = "descriptions";
+    protected $primaryKey = "d_id";
+    public function country()
+    {
+        return $this->belongsTo(country::class, 'countryDescription_id');
+
+    }
+    // public function read()
+    // {
+    //     return $this->belongsTo(read::class, 'r_id');
+    // }
+    public function video(): BelongsTo
+    {
+        return $this->belongsTo(video::class, 'v_id');
+    }
+
+    public function testDes()
+    {
+        return $this->hasMany(testdescription::class, 't_id');
+    }
+
+}

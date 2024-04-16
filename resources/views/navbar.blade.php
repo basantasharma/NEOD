@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>NEOD</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <header>
+            
+            <nav class="navbar navbar-expand-lg bg-secondary p-3">
+                <DIV class="col-3 d-flex justify-content-center fw-bold"><a class="navbar-brand text-light fs-4" href="{{route('logincheck')}}">NEOD</a></DIV>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse col-7 d-flex justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                        @auth
+                    <li class="nav-item">
+                      <a class="nav-link fw-bold" href="{{route('logincheck')}}" >Country Guidelines</a>
+                    </li>     
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="{{route('admin.showTestPage')}}" >Proficency Test</a>
+                    </li>                 
+                        @endauth   
+
+                  </ul>                 
+                </div>
+                <div class="col-2 d-flex justify-content-center">
+                    @auth
+                    <a href="{{route('admin.logout')}}" class="d-flex justify-conteny-end text-decoration-none"><li class="btn btn-primary border border-3 border-primary fw-bold">Logout</li></a>
+                    @endauth
+                </div>
+              </nav>
+              
+                  
+        </header>
+        <main>
+         
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script>
+        // open(){
+                 
+        //     var x = document.getElementById('button1').classList.add("menu-open");
+        //     console.log(x);
+        // }
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
