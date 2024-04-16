@@ -1,4 +1,4 @@
-@extends('base')
+{{-- @extends('base')
 @section('content')
 <div class="border border-2 p-3 mt-5 rounded" style="margin-left: 30%; margin-right:30%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Update Read Link</span></div>
@@ -47,4 +47,4 @@ setTimeout(function(){
   document.getElementById("videoStatus").style.display ="none";
 },3000)
 </script>
-@endsection
+@endsection --}}

@@ -95,7 +95,7 @@ class AdddetailsController extends Controller
         // $readlinkdetails = read::all();
         $videolinkdetails = video::all();
 
-        $data = compact('countrydetails', 'readlinkdetails', 'videolinkdetails');
+        $data = compact('countrydetails', 'videolinkdetails');
         return view('addDetails.addDescription')->with($data);
     }
 

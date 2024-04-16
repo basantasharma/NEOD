@@ -6,6 +6,7 @@ use App\Models\country;
 use App\Models\description;
 use app\Models\sub;
 use App\Models\read;
+use App\Models\testdescription;
 use App\Models\video;
 use Illuminate\Http\Request;
 
@@ -65,12 +66,12 @@ class ViewdetailsController extends Controller
 
 
     //Read View..................................................................................................................
-    // public function viewRead()
-    // {
-    //     $read = read::all();
-    //     $data = compact('read');
-    //     return view('viewDetails.read')->with($data);
-    // }
+    public function viewRead()
+    {
+        $test = testdescription::all();
+        $data = compact('test');
+        return view('viewDetails.read')->with($data);
+    }
 
 
     // public function deleteRead($id)
