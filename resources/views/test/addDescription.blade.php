@@ -1,9 +1,11 @@
 @extends('base')
 @section('content')
 <div class="border border-2 p-3 mt-5" style="margin-left: 28%; margin-right:28%;">
+
+  {{-- @dd($read) --}}
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Add Description</span></div>
   <hr>
-  <form class="p-3" method="post" action="{{route('admin.postTestDescription')}}" >
+  <form class="p-3" method="post" action="{{route('admin.postTestDescription',['id'=> $read->d_id])}}" >
     @csrf
 
       <div class="row col-12">
@@ -12,16 +14,21 @@
             Add Description
           </label>
         </div>
-        <div class="col-7 ">
+        <div class="col-7">
          <textarea name="description" id="description" rows="5" class="form-control" required></textarea>
          @error('description')
          <span class="text-danger">{{$message}}</span>
          @enderror
         </div>
-      </div><br>     
+      </div><br>  
+      <select  id="t_id" name="t_id" hidden>
+        <option value="{{$read->d_id}}" selected>Select a Reading link</option>
+      </select>
+
     <div class="d-flex justify-content-center mt-3">
       <button type="submit" class="btn btn-success">Add Description</button>
     </div>
+
   </form>
   <div id="descriptionStatus" class="align-items-center">
     @if(Session::has('success'))

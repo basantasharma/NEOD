@@ -12,13 +12,10 @@ return new class extends Migration {
     {
         Schema::create('testimages', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('img_id');
-            $table->foreign('img_id')->references('img_id')->on('testdescriptions')->onDelete('cascade');
-
-
+            $table->foreign('img_id')->references('d_id')->on('descriptions')->onDelete('cascade');
             $table->string('images');
-            $table->enum('Exam', ["ielts", "pte"]);
+            $table->enum('exam', ["ielts", "pte", "sat", "gre"]);
             $table->timestamps();
         });
     }

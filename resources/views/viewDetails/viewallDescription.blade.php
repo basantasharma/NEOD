@@ -27,9 +27,9 @@
             <th scope="col" class="text-warning" >Country ID</th>
             <th scope="col" class="text-warning" >Country</th>
             <th scope="col" class="text-warning">Description</th>        
-            <th scope="col" class="text-warning">Reading Link</th>        
+            <th scope="col" class="text-warning">Video Link Name</th>        
             <th scope="col" class="text-warning">Sub Description</th>
-
+            <th scope="col" class="text-warning">Reading Description</th>        
             <th scope="col" class="text-warning">Action</th>
           </tr>
         </thead>
@@ -38,16 +38,14 @@
             @foreach($allDetails as $item)  
             <td>{{$item->country->id}}</td>
             <td>{{$item->country->name}}</td>
-            <td>{{$item->description}}</td>    
+            <td>{{$item->description}}</td>   
+            <td>{{$item->video->name}}</td>   
+            <td>{{$item->sub_description}}</td>    
             <td>
-            <button>
-              view
-            </button>
-            <button>
-              Add
-            </button>  
+              <a href="{{route('admin.addTestDescription',['id'=> $item->d_id])}}"><button class="bg-success">Add</button></a>
+              <a href="{{route('admin.viewAllDescription',['id'=> $item->d_id])}}"><button class="bg-primary">View</button></a>
             </td>    
-            <td>{{$item->sub_description}}</td>        
+                
             <td>
                 <a href="{{route('admin.editDescription',['id'=>$item->d_id])}}"><button class="bg-secondary">Edit</button></a>
                 <a href="{{route('admin.deleteDetails',['d_id'=> $item->d_id])}}"><button class="bg-danger">Delete</button></a>

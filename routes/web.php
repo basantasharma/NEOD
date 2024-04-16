@@ -26,12 +26,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         //READ LINK ROUTES.................................................................
 
-        Route::get('/addreadlink', 'App\Http\Controllers\AdddetailsController@readlink')->name('readlink');//get
-        Route::post('/postreadlink', 'App\Http\Controllers\AdddetailsController@postreadlink')->name('postreadlink');//post
+        // Route::get('/addreadlink', 'App\Http\Controllers\AdddetailsController@readlink')->name('readlink');//get
+        // Route::post('/postreadlink', 'App\Http\Controllers\AdddetailsController@postreadlink')->name('postreadlink');//post
         route::get('/view/readinglinks', [ViewdetailsController::class, 'viewRead'])->name('viewRead');//viewList
-        route::get('/readinglink/delete/{id}', [ViewdetailsController::class, 'deleteRead'])->name('deleteRead');//delete....
-        route::get('/edit/readlink/{id}', [ViewdetailsController::class, 'editReadLink'])->name('editReadLink');//edit..........
-        route::post('/update/readlink/{id}', [ViewdetailsController::class, 'updateReadLink'])->name('updateReadLink');//update......
+        // route::get('/readinglink/delete/{id}', [ViewdetailsController::class, 'deleteRead'])->name('deleteRead');//delete....
+        // route::get('/edit/readlink/{id}', [ViewdetailsController::class, 'editReadLink'])->name('editReadLink');//edit..........
+        // route::post('/update/readlink/{id}', [ViewdetailsController::class, 'updateReadLink'])->name('updateReadLink');//update......
 
 
 
@@ -71,24 +71,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         //Test page..............................................
         // test description.............
-        route::get('/proficency test/page', [TestController::class, 'showTestPage'])->name('showTestPage');
-        route::get('/view all/test/description', [TestController::class, 'viewAllDescription'])->name('viewAllDescription');
-        route::get('/add/test description', [TestController::class, 'addTestDescription'])->name('addTestDescription');
-        route::post('/post/test description', [TestController::class, 'postTestDescription'])->name('postTestDescription');
-        route::post('/post/test description', [TestController::class, 'postTestDescription'])->name('postTestDescription');
-        route::get('/edit/test description/{id}', [TestController::class, 'editTestDescription'])->name('editTestDescription');
-        route::post('/update/test description/{id}', [TestController::class, 'updateTestDescription'])->name('updateTestDescription');
-        route::get('/delete/test description/{id}', [TestController::class, 'deleteTestDescription'])->name('deleteTestDescription');
+        // route::get('/reading description/page', [TestController::class, 'showTestPage'])->name('showTestPage');
+        route::get('/view all/reading/description/{id}', [TestController::class, 'viewAllDescription'])->name('viewAllDescription');///
+        route::get('/add/reading description/{id}', [TestController::class, 'addTestDescription'])->name('addTestDescription');
+        route::post('/post/reading description/{id}', [TestController::class, 'postTestDescription'])->name('postTestDescription');//
+        route::get('/edit/reading description/{id}', [TestController::class, 'editTestDescription'])->name('editTestDescription');//
+        route::post('/update/reading description/{id}', [TestController::class, 'updateTestDescription'])->name('updateTestDescription');//
+        route::get('/delete/reading description/{id}', [TestController::class, 'deleteTestDescription'])->name('deleteTestDescription');//
 
         //test images..................................................
-        route::get('/proficency test/view image/page', [TestController::class, 'viewImagePage'])->name('viewImagePage');
-        route::get('/proficency test/add image/page/ielts', [TestController::class, 'addIeltsImagePage'])->name('addIeltsImagePage');
-        route::post('/proficency test/post image/page/ielts', [TestController::class, 'postIeltsImagePage'])->name('postIeltsImagePage');
-        route::get('/proficency test/delete image/page/ielts/{id}', [TestController::class, 'deleteIeltsImage'])->name('deleteIeltsPhoto');
+        route::get('/reading description/view image/page', [TestController::class, 'viewImagePage'])->name('viewImagePage');
+        route::get('/reading description/add image/page/ielts', [TestController::class, 'addIeltsImagePage'])->name('addIeltsImagePage');
+        route::post('/reading description/post image/page/ielts', [TestController::class, 'postIeltsImagePage'])->name('postIeltsImagePage');
+        route::get('/reading description/delete image/page/ielts/{id}', [TestController::class, 'deleteIeltsImage'])->name('deleteIeltsPhoto');
 
-        route::get('/proficency test/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
-        route::post('/proficency test/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');
-        route::get('/proficency test/delete image/page/pte/{id}', [TestController::class, 'deletePteImage'])->name('deletePtePhoto');
+        route::get('/reading description/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
+        route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');
+        route::get('/reading description/delete image/page/pte/{id}', [TestController::class, 'deletePteImage'])->name('deletePtePhoto');
 
 
 

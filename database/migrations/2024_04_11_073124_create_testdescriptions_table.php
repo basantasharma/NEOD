@@ -14,12 +14,7 @@ return new class extends Migration {
             $table->id();
 
             $table->unsignedBigInteger('t_id');
-            $table->foreign('t_id')->references('t_id')->on('descriptions')->onDelete('cascade');
-
-            $table->unsignedBigInteger('img_id');
-            $table->foreign('img_id')->references('id')->on('testdescriptions')->onDelete('cascade');
-
-
+            $table->foreign('t_id')->references('d_id')->on('descriptions')->onDelete('cascade');
             $table->string('description');
             $table->timestamps();
         });

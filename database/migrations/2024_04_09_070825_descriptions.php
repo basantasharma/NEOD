@@ -15,12 +15,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('countryDescription_id');
             $table->string('description');
             $table->unsignedBigInteger('v_id');
-
             $table->string('sub_description')->nullable()->default(null);
-
-            $table->unsignedBigInteger('t_id');
-
-            $table->foreign('t_id')->references('d_id')->on('descriptions')->onDelete('cascade');
             $table->foreign('countryDescription_id')->references('id')->on('countries')->onDelete('cascade');
             $table->foreign('v_id')->references('id')->on('videos')->onDelete('cascade');
 
