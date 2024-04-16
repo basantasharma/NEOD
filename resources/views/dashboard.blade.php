@@ -10,13 +10,13 @@
         <ul class="p-4 w-100 d-flex justify-content-evenly">  
             <a href="{{route('admin.viewCountry')}}"><li class="list1  text-center ps-4 pe-4">Country</li></a>
             <a href="{{route('admin.viewVideo')}}"> <li class="list1 ms-2 text-center ps-4 pe-4">Video Link</li></a>
-            <a href="{{route('admin.viewRead')}}"> <li class="list1 ms-2 text-center ps-4 pe-4">Read Link</li></a>               
+            {{-- <a href="{{route('admin.viewRead')}}"> <li class="list1 ms-2 text-center ps-4 pe-4">Read Link</li></a>                --}}
             <a href="{{route('admin.viewDetails')}}"><li class="list1 ms-2 text-center ps-4 pe-4">Descriptions</li></a>
         </ul>
     </div>
 </div>
 <hr>
-<h6 class="text-danger text-center"> Add Country, Videolink and Reading link before adding description.</h6>
+<h6 class="text-danger text-center"> Add Country and Videolink  before adding description.</h6>
 <style>
     a{
         text-decoration: none;

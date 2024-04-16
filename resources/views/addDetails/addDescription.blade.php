@@ -38,26 +38,6 @@
         
       </div><br>
 
-      {{-- <div class="row col-12">
-        <div class="col-5 text-center">
-          <label for="readLink " class="p-2">
-            Reading Link<span class="text-danger">*</span>
-          </label>
-        </div>
-        <div class="col-7 ">
-          <select class="form-select" id="read_link" name="read_link" aria-placeholder="select" required>
-            <option class="text-center" selected>Select a Reading link</option>
-
-            @foreach ($readlinkdetails as $read)
-                <option value="{{$read->id}}" class="text-success"> {{$read->r_link}}</option>
-            @endforeach
-          </select>
-          @error('read_link')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-      </div><br> --}}
-
       <div class="row col-12">
         <div class="col-5 text-center">
           <label for="video_link " class="p-2">
@@ -68,7 +48,7 @@
           <select class="form-select " id="video_link" name="video_link" required>
             <option class="text-center" selected>Select a Video Link</option>
             @foreach ($videolinkdetails as $video)
-              <option value="{{$video->id}}" class="text-success">{{$video->v_link}}</option>                
+              <option value="{{$video->id}}" class="text-success">{{$video->name}} or {{$video->v_link}}   </option>                
             @endforeach
           </select>
           @error('video_link')

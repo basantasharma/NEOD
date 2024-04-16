@@ -4,7 +4,7 @@
   <h4>All Reading</h4>
 </div>
 
-<a href="" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Reading Link</button></a>
+{{-- <a href="" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Reading Link</button></a> --}}
 
 
 <div id="abcd" class="align-items-center" style="margin-left: 35%; margin-right:35%;">
@@ -29,21 +29,18 @@
         <thead class="border border-2 ">
           <tr >
             <th class="text-warning" scope="col">id</th>
-            <th scope="col" class="text-warning">Name</th>
-            <th scope="col" class="text-warning">Reading Link</th>
+            {{-- <th scope="col" class="text-warning">Name</th> --}}
+            <th scope="col" class="text-warning">Reading Description</th>
             <th scope="col" class="text-warning">Actions</th>
           </tr>
         </thead>
         <tbody>
-            <tr>
-          
+            <tr>  
             <td></td>
-            
             <td></td>
             <td></td>
             <td>
-              
-                <a href=""><button class="bg-danger ">Delete</button></a>
+                <a href=""><button class="bg-danger">Delete</button></a>
                 <a href=""><button class="bg-primary">Edit</button></a>
             </td>
         </tr>

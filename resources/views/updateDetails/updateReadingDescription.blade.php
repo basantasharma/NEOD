@@ -1,15 +1,15 @@
 @extends('base')
 @section('content')
 <div class="border border-2 p-3 mt-5" style="margin-left: 28%; margin-right:28%;">
-  <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Update Description</span></div>
+  <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Update Reading Description</span></div>
   <hr>
-  <form class="p-3" method="post" action="{{route('admin.updateTestDescription',['id'=> $edit->id])}}" >
+  <form class="p-3" method="post" action="{{route('admin.updateTestDescription',['id'=>$edit->id])}}" >
     @csrf
 
       <div class="row col-12">
         <div class="col-5 text-center">
           <label for="description" class="p-2">
-            Change Description
+            Change Reading Description
           </label>
         </div>
         <div class="col-7 ">

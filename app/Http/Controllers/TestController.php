@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 // 
+use App\Models\description;
 use App\Models\testdescription;
 use App\Models\testimage;
 use Illuminate\Http\Request;
@@ -10,6 +11,113 @@ use Illuminate\Http\Request;
 class TestController extends Controller
 {
     //
+    public function showTestPage()
+    {
+        return view('test');
+    }
+
+    public function viewAllDescription($id)
+    {
+        $details = testdescription::where('t_id', $id)->get();
+        if ($details) {
+            $data = compact('details');
+            return view('viewDetails.readDescription')->with($data);
+        } else {
+            return redirect()->route('admin.viewDetails')->with('fail', 'No data Found.');
+        }
+    }
+
+    public function addTestDescription($id)
+    {
+        $read = description::find($id);
+        if (is_null($read)) {
+            return redirect()->route('admin.viewDetails')->with('fail', 'No data found');
+        } else {
+
+            $data = compact('read');
+            return view('test.addDescription')->with($data);
+        }
+    }
+
+    // public function postTestDescription($id, Request $request)
+    // {
+    //     $request->validate([
+    //         'description' => 'required|min:5',
+    //         't_id' => 'required',
+    //     ]);
+    //     $description = Description::find($id); // Assuming Description is the model for 'description'
+    //     if ($description) {
+    //         $description->testdescriptions->description = $request->description; // Assuming testdescriptions is a related model
+    //         $description->testdescriptions->t_id = $request->t_id; // Assuming t_id is a field in testdescriptions
+    //         $save = $description->testdescriptions->save();
+    //         if ($save) {
+    //             return redirect()->route('admin.addTestDescription')->with('success', 'Successfully added');
+    //         } else {
+    //             return redirect()->route('admin.addTestDescription')->with('fail', 'Not added.');
+    //         }
+    //     } else {
+    //         return redirect()->route('admin.viewDetais')->with('fail', 'Cannot add.'); // Redirect to correct route
+    //     }
+    // }
+
+
+
+    public function deleteTestDescription($id)
+    {
+        $test = testdescription::find($id);
+        if (!is_null($test)) {
+            $test->delete();
+            return redirect()->route('admin.viewAllDescription', ['id' => $test->t_id])->with('success', 'Reading Description deleted Sucessfully.');
+        } else {
+            return redirect('admin.viewAllDescription')->with('fail', 'Reading Description not deleted.');
+        }
+
+    }
+
+    public function postTestDescription(request $request, $id)
+    {
+        $item = description::find($id);
+        if ($item) {
+            $request->validate([
+                'description' => 'required|min:6',
+            ]);
+            $testdes = new testdescription;
+            $testdes->description = $request->description;
+            $testdes->t_id = $request->t_id;
+            $save = $testdes->save();
+        }
+        if ($save) {
+            return redirect()->route('admin.addTestDescription', ['id' => $item->d_id])->with('success', 'Successfully added.');
+        } else {
+            return redirect()->route('admin.viewDetails')->with('fail', 'Not added.');
+        }
+    }
+
+    public function editTestDescription($id)
+    {
+        $edit = testdescription::find($id);
+        if (!is_null($edit)) {
+            $data = compact('edit');
+            return view('updateDetails.updateReadingDescription')->with($data);
+        } else {
+            return redirect()->route('admin.viewAllDescription')->with('fail', 'No data Found on the table.');
+        }
+    }
+
+    public function updateTestdescription($id, Request $request)
+    {
+        $request->validate([
+            'description' => 'required|min:5',
+        ]);
+        $update = testdescription::find($id);
+        $update->description = $request->description;
+        $save = $update->save();
+        if ($save) {
+            return redirect()->route('admin.viewAllDescription', ['id' => $update->t_id])->with('success', 'Reading Description updated successfully.');
+        } else {
+            return redirect()->route('admin.viewAllDescription')->with('fail', 'Data not updated.');
+        }
+    }
 
 
 

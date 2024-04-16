@@ -103,7 +103,6 @@ class AdddetailsController extends Controller
     {
         $request->validate([
             'country' => 'required',
-            'read_link' => 'required',
             'video_link' => ' required',
             'description' => 'required| min:10',
             'subdescription' => 'nullable',
@@ -112,7 +111,6 @@ class AdddetailsController extends Controller
         $description = new description;
         $description->countryDescription_id = $request->country;
         $description->v_id = $request->video_link;
-        $description->r_id = $request->read_link;
         $description->description = $request->description;
         $description->sub_description = $request->subdescription;
         $save = $description->save();
@@ -124,10 +122,5 @@ class AdddetailsController extends Controller
             return redirect('admin/adddescription')->with('fail', ' Descripton not added.');
         }
     }
-
-    // public function addsubdescription()
-    // {
-    //     return view('addDetails.addSub');
-    // }
 }
 
