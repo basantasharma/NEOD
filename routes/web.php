@@ -16,7 +16,7 @@ route::post('/login', [AuthController::class, 'login'])->name('logging');
 
 
 route::get('/register', [AuthController::class, 'registerDisplay'])->name('registerDisplay');
-route::post('/register', [AuthController::class, 'registering'])->name('registeringasdasdasd');
+route::post('/register', [AuthController::class, 'registering'])->name('registering');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
