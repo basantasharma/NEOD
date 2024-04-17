@@ -40,55 +40,7 @@
         </tr>
            @endforeach
         </tbody>
-      </table>
-      <div class="col-12 mt-5">
-        <h4 class="text-center mt-3">Add Image for this Reading Link</h4>
-        <div class=" d-flex justify-content-end">
-          <button class="btn btn-success me-4">Add IELTS Image</button>
-          <button class="btn btn-success">Add PTE Image</button>
-        </div>
-        <div class="images">
-          <div class="mt-5 d-flex " style="margin-left: 2%; margin-right:2%;">
-            <div class="ielts col-6 ">
-              <h5 class="text-center">IELTS Certificate Photo</h5>
-              <div class="image">
-                <div class="img1 d-flex justify-content-center">
-                    <img src="" alt="Ielts.img" style="height: 500px; width:400px;">
-                </div>
-            </div>
-              <div class="name">
-                  <div class="d-flex justify-content-center mt-3">
-                    <a href=""><button class="bg-danger">Delete</button></a>
-                  </div>
-                </div>
-                
-            </div>
-            <hr>
-            <div class="pte col-6">
-              <h5 class="text-center">PTE Certificate Photo</h5>
-        
-             
-              <div class="image">
-                <div class="img2 d-flex justify-content-center">
-                      <img src="" alt="Pte.img" style="height: 500px; width:400px;">
-              </div>
-            </div>
-              <div class="name">
-                  <div class="d-flex justify-content-center mt-3">
-                    <a href="}"><button class="bg-danger">Delete</button></a>
-                  </div>
-                </div>  
-        
-            </div>
-        
-            </div>
-            <hr>
-            <div>
-              <h6 class="text-center text-danger mb-5">First delete and add again to change photo.</h6>
-            </div>
-        </div>
-
-      </div>
+      </table> 
 </div>
 <style>
     .table{

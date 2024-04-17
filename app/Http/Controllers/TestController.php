@@ -123,45 +123,48 @@ class TestController extends Controller
 
     //Ielts imagesssss...........................................................................
 
-    // public function viewImagePage()
-    // {
+    public function viewImagePage($id)
+    {
+        $image = description::find($id);
+        if ($image) {
+            $data = compact('image');
+            return view('test.viewImage')->with($data);
+        } else {
+            return redirect('admin.viewAllDescription')->with('fail', 'No Data Found.');
+        }
+    }
 
-    //     // $ieltsimg = testimage::where('Exam', 'ielts')->first();
-    //     $ieltsimg = testimage::where('Exam', 'ielts')->take(1)->get();
-    //     $pteimg = testimage::where('Exam', 'pte')->take(1)->get();
-    //     $data = compact('ieltsimg', 'pteimg');
-    //     // dd($data);
-    //     return view('test.viewImage')->with($data);
-    // }
+    public function addImagePage($id)
+    {
+        $image = description::find($id);
 
-    // public function addIeltsImagePage()
-    // {
-    //     return view('test.ieltsForm');
-    // }
-    // public function postIeltsImagePage(Request $request)
-    // {
-    //     $request->validate([
-    //         'ieltsimg' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
-    //     ]);
-    //     $image = time() . "neod." . $request->file('ieltsimg')->getClientOriginalExtension();
-    //     $path = $request->file('ieltsimg')->storeAs('public/ieltsimg/images/' . $image);
-    //     $newpath = str_replace('public/', '', $path);
+        return view('test.addImageForm', compact('image'));
 
-    //     // Now you can save $filePath in your database
+    }
+    public function postIeltsImagePage(Request $request)
+    {
+        $request->validate([
+            'ieltsimg' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
+        ]);
+        $image = time() . "neod." . $request->file('ieltsimg')->getClientOriginalExtension();
+        $path = $request->file('ieltsimg')->storeAs('public/ieltsimg/images/' . $image);
+        $newpath = str_replace('public/', '', $path);
+
+        // Now you can save $filePath in your database
 
 
-    //     $photo = new testimage;
-    //     $photo->images = $newpath;
-    //     $photo->Exam = 'ielts';
+        $photo = new testdescription;
+        $photo->images = $newpath;
+        $photo->Exam = 'ielts';
 
-    //     $save = $photo->save();
+        $save = $photo->save();
 
-    //     if ($save) {
-    //         return redirect()->route('admin.viewImagePage')->with('success', 'Image Uploaded successfully.');
-    //     } else {
-    //         return redirect()->route('admin.addIeltsImagePage')->with('fail', 'Image not uploaded. You have to delete previous on to add another');
-    //     }
-    // }
+        if ($save) {
+            return redirect()->route('admin.viewImagePage')->with('success', 'Image Uploaded successfully.');
+        } else {
+            return redirect()->route('admin.addIeltsImagePage')->with('fail', 'Image not uploaded. You have to delete previous on to add another');
+        }
+    }
 
 
     // public function deleteIeltsImage($id)

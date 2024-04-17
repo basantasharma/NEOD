@@ -1,4 +1,4 @@
-
+{{-- 
 @extends('base')
 @section('content')
 <div class="border border-2 p-3 mt-5" style="margin-left: 28%; margin-right:28%;">
@@ -33,4 +33,4 @@
    document.getElementById("descriptionStatus").style.display = "none";
    }, 3000);  
 </script>
-@endsection
+@endsection --}}
