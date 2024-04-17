@@ -7,8 +7,8 @@
 </div>
 <hr>
 <div class="d-flex justify-content-end">
-    <a href="{{route('admin.addIeltsImagePage')}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add IELTS photo</button></a>
-    <a href="{{route('admin.addPteImagePage')}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add PTE photo</button></a>
+    <a href="{{route('admin.addImagePage',['id'=>$image->d_id])}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add</button></a>
+    {{-- <a href="{{route('admin.addPteImagePage')}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add PTE photo</button></a> --}}
 </div>
 
 <div id="Status" class="align-items-center" style="margin-left: 35%; margin-right:35%;">
@@ -23,41 +23,23 @@
   </div>
   @endif
 </div>
-<div class="mt-5 d-flex " style="margin-left: 2%; margin-right:2%;">
-    <div class="ielts col-6 ">
-      <h5 class="text-center">IELTS Certificate Photo</h5>
-      @foreach($ieltsimg as $item)
+<div class="mt-5 " style="margin-left: 2%; margin-right:2%;">
+    <div class="ielts col-12 ">
+      <h5 class="text-center">Photo</h5>
+
       <div class="image">
         <div class="img1 d-flex justify-content-center">
-            <img src="{{ asset('storage/' . $item->images) }}" alt="Ielts.img" style="height: 500px; width:400px;">
+            <img src="" alt="" class="border" style="height: 500px; width:400px;">
         </div>
     </div>
       <div class="name">
           <div class="d-flex justify-content-center mt-3">
-            <a href="{{route('admin.deleteIeltsPhoto',['id'=> $item->id])}}"><button class="bg-danger">Delete</button></a>
+            <a href=""><button class="bg-danger">Delete</button></a>
           </div>
         </div>
-        
-        @endforeach
+
     </div>
     <hr>
-    <div class="pte col-6">
-      <h5 class="text-center">PTE Certificate Photo</h5>
-
-      @foreach($pteimg as $items)
-      <div class="image">
-        <div class="img2 d-flex justify-content-center">
-              <img src="{{ asset('storage/' . $items->images) }}" alt="Pte.img" style="height: 500px; width:400px;">
-      </div>
-    </div>
-      <div class="name">
-          <div class="d-flex justify-content-center mt-3">
-            <a href="{{route('admin.deletePtePhoto',['id'=> $items->id])}}"><button class="bg-danger">Delete</button></a>
-          </div>
-        </div>
-        
-        
-        @endforeach
     </div>
 
     </div>

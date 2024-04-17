@@ -80,14 +80,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::get('/delete/reading description/{id}', [TestController::class, 'deleteTestDescription'])->name('deleteTestDescription');//
 
         //test images..................................................
-        route::get('/reading description/view image/page', [TestController::class, 'viewImagePage'])->name('viewImagePage');
-        route::get('/reading description/add image/page/ielts', [TestController::class, 'addIeltsImagePage'])->name('addIeltsImagePage');
-        route::post('/reading description/post image/page/ielts', [TestController::class, 'postIeltsImagePage'])->name('postIeltsImagePage');
-        route::get('/reading description/delete image/page/ielts/{id}', [TestController::class, 'deleteIeltsImage'])->name('deleteIeltsPhoto');
+        route::get('/reading description/view image/page/{id}', [TestController::class, 'viewImagePage'])->name('viewImagePage');
+        route::get('/reading description/add image/page/{id}', [TestController::class, 'addImagePage'])->name('addImagePage');
+        route::post('/reading description/post image/page/', [TestController::class, 'postImagePage'])->name('postImagePage');
+        route::get('/reading description/delete image/page//{id}', [TestController::class, 'deleteImage'])->name('deletePhoto');
 
-        route::get('/reading description/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
-        route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');
-        route::get('/reading description/delete image/page/pte/{id}', [TestController::class, 'deletePteImage'])->name('deletePtePhoto');
+        // route::get('/reading description/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
+        // route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');
+        // route::get('/reading description/delete image/page/pte/{id}', [TestController::class, 'deletePteImage'])->name('deletePtePhoto');
 
 
 

@@ -16,6 +16,10 @@ return new class extends Migration {
             $table->foreign('img_id')->references('d_id')->on('descriptions')->onDelete('cascade');
             $table->string('images');
             $table->enum('exam', ["ielts", "pte", "sat", "gre"]);
+            // $table->string('agent');
+            // $table->string('college');
+            // $table->string('offerletter');
+            // $table->string('documents');
             $table->timestamps();
         });
     }
