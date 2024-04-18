@@ -39,28 +39,6 @@ class TestController extends Controller
         }
     }
 
-    // public function postTestDescription($id, Request $request)
-    // {
-    //     $request->validate([
-    //         'description' => 'required|min:5',
-    //         't_id' => 'required',
-    //     ]);
-    //     $description = Description::find($id); // Assuming Description is the model for 'description'
-    //     if ($description) {
-    //         $description->testdescriptions->description = $request->description; // Assuming testdescriptions is a related model
-    //         $description->testdescriptions->t_id = $request->t_id; // Assuming t_id is a field in testdescriptions
-    //         $save = $description->testdescriptions->save();
-    //         if ($save) {
-    //             return redirect()->route('admin.addTestDescription')->with('success', 'Successfully added');
-    //         } else {
-    //             return redirect()->route('admin.addTestDescription')->with('fail', 'Not added.');
-    //         }
-    //     } else {
-    //         return redirect()->route('admin.viewDetais')->with('fail', 'Cannot add.'); // Redirect to correct route
-    //     }
-    // }
-
-
 
     public function deleteTestDescription($id)
     {
@@ -127,7 +105,8 @@ class TestController extends Controller
     {
         $image = description::find($id);
         if ($image) {
-            $data = compact('image');
+            $photo = testimage::where('img_id', $id)->get();
+            $data = compact('image', 'photo');
             return view('test.viewImage')->with($data);
         } else {
             return redirect('admin.viewAllDescription')->with('fail', 'No Data Found.');
@@ -141,42 +120,41 @@ class TestController extends Controller
         return view('test.addImageForm', compact('image'));
 
     }
-    public function postIeltsImagePage(Request $request)
+    public function postImagePage(Request $request, $id)
     {
         $request->validate([
-            'ieltsimg' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
+            'addImage' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
         ]);
-        $image = time() . "neod." . $request->file('ieltsimg')->getClientOriginalExtension();
-        $path = $request->file('ieltsimg')->storeAs('public/ieltsimg/images/' . $image);
+        $image = time() . "neod." . $request->file('addImage')->getClientOriginalExtension();
+        $path = $request->file('addImage')->storeAs('public/descriptions/images/' . $image);
         $newpath = str_replace('public/', '', $path);
 
-        // Now you can save $filePath in your database
-
-
-        $photo = new testdescription;
+        $photoss = description::find($id);
+        $photo = new testimage;
         $photo->images = $newpath;
-        $photo->Exam = 'ielts';
-
+        $photo->img_id = $request->img_id;
         $save = $photo->save();
 
         if ($save) {
-            return redirect()->route('admin.viewImagePage')->with('success', 'Image Uploaded successfully.');
+            return redirect()->route('admin.viewImagePage', ['id' => $photoss->d_id])->with('success', 'Image Uploaded successfully.');
         } else {
-            return redirect()->route('admin.addIeltsImagePage')->with('fail', 'Image not uploaded. You have to delete previous on to add another');
+            return redirect()->route('admin.addImagePage', ['id' => $photoss->d_id])->with('fail', 'Image not uploaded. You have to delete previous on to add another');
         }
     }
 
 
-    // public function deleteIeltsImage($id)
-    // {
-    //     $del = testimage::find($id);
-    //     if (is_null($del)) {
-    //         return redirect()->route('admin.viewImagePage')->with('fail', 'Cannot be deleted.');
-    //     } else {
-    //         $del->delete();
-    //         return redirect()->route('admin.viewImagePage')->with('success', 'Image deleted successfully.');
-    //     }
-    // }
+
+    public function deleteImage($id)
+    {
+        $test = testimage::find($id);
+        if (!is_null($test)) {
+            $test->delete();
+            return redirect()->route('admin.viewImagePage', ['id' => $test->img_id])->with('success', 'Image deleted Sucessfully.');
+        } else {
+            return redirect('test.viewImage')->with('fail', 'Reading Description not deleted.');
+        }
+
+    }
 
     // //pteImages..........................................................
     // public function addPteImagePage()

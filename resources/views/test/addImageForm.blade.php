@@ -4,12 +4,16 @@
 <div class="border border-2 p-3 mt-5" style="margin-left: 28%; margin-right:28%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Choose Image</span></div>
   <hr>
-  <form class="p-3" method="post" action="" enctype="multipart/form-data" >
+  <form class="p-3" method="post" action="{{route('admin.postImagePage',['id'=>$image->d_id])}}" enctype="multipart/form-data" >
     @csrf
     <label class="mb-3 mt-1" for="addImage">Choose a Image</label>
         <div class="input-group mb-3">
         <input type="file" class="form-control" name="addImage" id="addImage">
         </div>
+
+        <select name="img_id" id="img_id" hidden>
+          <option value="{{$image->d_id}}"></option>
+        </select>
 
     <div class="d-flex justify-content-center mt-4">
       <button type="submit" class="btn btn-success">Save Image</button>

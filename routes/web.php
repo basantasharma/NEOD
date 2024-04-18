@@ -82,8 +82,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //test images..................................................
         route::get('/reading description/view image/page/{id}', [TestController::class, 'viewImagePage'])->name('viewImagePage');
         route::get('/reading description/add image/page/{id}', [TestController::class, 'addImagePage'])->name('addImagePage');
-        route::post('/reading description/post image/page/', [TestController::class, 'postImagePage'])->name('postImagePage');
-        route::get('/reading description/delete image/page//{id}', [TestController::class, 'deleteImage'])->name('deletePhoto');
+        route::post('/reading description/post image/page/{id}', [TestController::class, 'postImagePage'])->name('postImagePage');
+        route::get('/reading description/delete image/page/{id}', [TestController::class, 'deleteImage'])->name('deletePhoto');
 
         // route::get('/reading description/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
         // route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');

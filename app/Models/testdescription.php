@@ -12,8 +12,8 @@ class testdescription extends Model
     {
         return $this->belongsTo(description::class, 't_id');
     }
-    public function testimg()
-    {
-        return $this->hasMany(testimage::class, 't_id');
-    }
+    // public function testimg()
+    // {
+    //     return $this->hasMany(testimage::class, 't_id');
+    // }
 }

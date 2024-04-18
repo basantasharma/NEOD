@@ -20,8 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/country/descriptions', [ApiController::class, 'getData'])->name('countryDescription');
-Route::get('/country/{id}/descriptions', [ApiController::class, 'viewData'])->name('countryDescriptionId');
-
-
-route::get('/proficencyTest/descriptions', [ApiController::class, 'testGetData'])->name('testGetData');
-route::get('/proficencyTest/{exam}/images', [ApiController::class, 'testGetPhoto'])->name('testGetPhoto');
+// Route::get('/country/{id}/descriptions', [ApiController::class, 'viewData'])->name('countryDescriptionId');

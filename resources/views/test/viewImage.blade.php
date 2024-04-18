@@ -7,8 +7,7 @@
 </div>
 <hr>
 <div class="d-flex justify-content-end">
-    <a href="{{route('admin.addImagePage',['id'=>$image->d_id])}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add</button></a>
-    {{-- <a href="{{route('admin.addPteImagePage')}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add PTE photo</button></a> --}}
+    <a href="{{route('admin.addImagePage',['id'=>$image->d_id])}}" class="me-4  text-decoration-none"><button class="btn btn-success ">Add Image</button></a>
 </div>
 
 <div id="Status" class="align-items-center" style="margin-left: 35%; margin-right:35%;">
@@ -23,33 +22,31 @@
   </div>
   @endif
 </div>
-<div class="mt-5 " style="margin-left: 2%; margin-right:2%;">
-    <div class="ielts col-12 ">
-      <h5 class="text-center">Photo</h5>
 
-      <div class="image">
-        <div class="img1 d-flex justify-content-center">
-            <img src="" alt="" class="border" style="height: 500px; width:400px;">
-        </div>
+@if(count($photo)>0)
+<div class="mt-5 d-flex" style="margin-left: 2%; margin-right:2%;">
+@foreach($photo as $item)
+  <div class="col-6 ">
+    <div class="d-flex justify-content-center">
+      <img src="{{asset('storage/'. $item->images)}}" style="height:450px; width:380px;" alt="...." class="border p-4">
     </div>
-      <div class="name">
-          <div class="d-flex justify-content-center mt-3">
-            <a href=""><button class="bg-danger">Delete</button></a>
-          </div>
-        </div>
-
-    </div>
-    <hr>
-    </div>
-
-    </div>
-    <hr>
     
-    <div>
-      <h6 class="text-center text-danger mb-5">First delete and add again to change photo.</h6>
+    <div class="d-flex justify-content-center">
+      <a href="{{route('admin.deletePhoto',['id'=> $item->id])}}"><button class="bg-danger mt-3">Delete</button></a>
     </div>
+  </div>
+@endforeach 
+</div>
+<div class="mt-4">
+  <h6 class="text-center text-danger mb-5">First delete and add again to change photo.</h6>
+</div>
+@else
 
+<div>
+  <h6 class="text-center mt-5 text-danger">No image Found for this description.</h6>
+</div>
 
+@endif
 <script>
 setTimeout(function(){
   document.getElementById("Status").style.display ="none";

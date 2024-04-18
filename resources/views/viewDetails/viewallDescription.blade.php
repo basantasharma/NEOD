@@ -44,7 +44,7 @@
             <td>
               <a href="{{route('admin.addTestDescription',['id'=> $item->d_id])}}"><button class="bg-success">Add</button></a>
               <a href="{{route('admin.viewAllDescription',['id'=> $item->d_id])}}"><button class="bg-primary">View</button></a>
-              <a href="{{route('admin.viewImagePage',['id'=> $item->d_id])}}"><button class="bg-warning">Image</button></a>
+              <a href="{{route('admin.viewImagePage',['id'=> $item->d_id])}}"><button style="background-color: rgb(225, 48, 154);">Image</button></a>
             </td>    
                 
             <td>
