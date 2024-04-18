@@ -13,7 +13,7 @@ class description extends Model
     use HasFactory;
     protected $fillable = [
         'descriptions',
-        'sub_id'
+
     ];
     protected $table = "descriptions";
     protected $primaryKey = "d_id";
@@ -22,18 +22,14 @@ class description extends Model
         return $this->belongsTo(country::class, 'countryDescription_id');
 
     }
-    // public function read()
-    // {
-    //     return $this->belongsTo(read::class, 'r_id');
-    // }
     public function video(): BelongsTo
     {
         return $this->belongsTo(video::class, 'v_id');
     }
 
-    public function testDes()
+    public function testDescription()
     {
-        return $this->hasMany(testdescription::class, 't_id');
+        return $this->hasMany(testdescription::class, 't_id', 'd_id');
     }
 
 }

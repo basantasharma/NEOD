@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class testdescription extends Model
 {
     use HasFactory;
-    public function testDes()
+    public function testDescription()
     {
-        return $this->belongsTo(description::class, 't_id');
+        return $this->belongsTo(description::class, 't_id', 'd_id');
     }
     // public function testimg()
     // {

@@ -11,29 +11,6 @@ use PhpParser\Node\NullableType;
 
 class AdddetailsController extends Controller
 {
-    //...........................ADD READLINK...........................................................
-    // public function readlink()
-    // {
-    //     return view('addDetails.addReadlink');
-    // }
-    // public function postreadlink(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'link' => 'required'
-    //     ]);
-
-    //     $read = new read;
-    //     $read->name = $request->name;
-    //     $read->r_link = $request->link;
-    //     $saved = $read->save();
-
-    //     if ($saved) {
-    //         return redirect('/admin/addreadlink')->with('success', 'Reading link added successfully.');
-    //     } else {
-    //         return redirect('/admin/addreadlink')->with('fail', 'Reading link is not added.');
-    //     }
-    // }
 
     //..........................ADD VIDEOLINK...............................................................
     public function videolink()
