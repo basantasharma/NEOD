@@ -13,16 +13,7 @@ class testimage extends Model
     ];
     public function testimg()
     {
-        return $this->belongsTo(testdescription::class, 'img_id');
+        return $this->belongsTo(description::class, 'img_id');
     }
-    // protected static function boot()
-    // {
-    //     parent::boot();
 
-    // static::creating(function ($testimages) {
-    //         if (self::count() >= 2) {
-    //             return false;
-    //         }
-    //     });
-    // }
 }

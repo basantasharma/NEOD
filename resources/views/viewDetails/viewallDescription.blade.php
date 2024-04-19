@@ -24,7 +24,7 @@
     <table class="table table-bordered text-center table-hover">
         <thead class="border border-2 ">
           <tr >
-            <th scope="col" class="text-warning" >Country ID</th>
+            {{-- <th scope="col" class="text-warning" >sn</th> --}}
             <th scope="col" class="text-warning" >Country</th>
             <th scope="col" class="text-warning">Description</th>        
             <th scope="col" class="text-warning">Video Link Name</th>        
@@ -36,7 +36,6 @@
         <tbody>
             <tr>
             @foreach($allDetails as $item)  
-            <td>{{$item->country->id}}</td>
             <td>{{$item->country->name}}</td>
             <td>{{$item->description}}</td>   
             <td>{{$item->video->name}}</td>   
