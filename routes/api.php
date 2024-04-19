@@ -19,5 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/country/descriptions', [ApiController::class, 'getData'])->name('countryDescription');
+Route::get('/{country}/all/descriptions', [ApiController::class, 'getData'])->name('countryDescription');
+// Route::get('/all/descriptions', [ApiController::class, 'getData'])->name('countryDescription');
 // Route::get('/country/{id}/descriptions', [ApiController::class, 'viewData'])->name('countryDescriptionId');

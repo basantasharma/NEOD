@@ -18,7 +18,7 @@ class ViewdetailsController extends Controller
     public function viewDetails()//view........
     {
         // $allDescriptions = Description::with('testDescription')->get();
-        // \Log::info('All Descriptions:', $allDescriptions->toArray());
+        // dd($allDescriptions);
         $allDetails = description::all()->sortBy(function ($query) {
             return $query->country->id;
         });

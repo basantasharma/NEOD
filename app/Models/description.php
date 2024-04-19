@@ -31,5 +31,9 @@ class description extends Model
     {
         return $this->hasMany(testdescription::class, 't_id', 'd_id');
     }
+    public function testimg()
+    {
+        return $this->hasMany(testimage::class, 'img_id');
+    }
 
 }

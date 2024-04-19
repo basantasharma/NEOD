@@ -10,10 +10,7 @@ class testdescription extends Model
     use HasFactory;
     public function testDescription()
     {
-        return $this->belongsTo(description::class, 't_id', 'd_id');
+        return $this->belongsTo(description::class, 't_id');
     }
-    // public function testimg()
-    // {
-    //     return $this->hasMany(testimage::class, 't_id');
-    // }
+
 }

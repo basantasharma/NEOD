@@ -11,39 +11,51 @@ use app\Models\video;
 
 class ApiController extends Controller
 {
-
-    public function getData()
+    public function getData($country)
     {
-        $allDescriptions = Description::with('testdDescription')->get();
-
-        if ($allDescriptions->isNotEmpty()) {
-            $responseData = [];
-
-            foreach ($allDescriptions as $item) {
-                $descriptionData = [
-                    'id' => $item->d_id,
-                    'country_id' => $item->country->id,
-                    'country_name' => $item->country->name,
-                    'country_image' => url(asset('storage/' . $item->country->logo)),
-                    'description' => $item->description,
-                    'sub_description' => $item->sub_description,
-                    'video_link' => $item->video->v_link,
+        $findCountry = country::where('name', $country)->first();
+        if ($findCountry) {
+            $findDescriptions = Description::where('countryDescription_id', $findCountry->id)
+                ->with('testDescription', 'testimg')
+                ->get();
+            $allData = [];
+            foreach ($findDescriptions as $descriptions) {
+                $storeDescriptions = [
+                    'country' => $country,
+                    'country_image' => url(asset('storage/' . $descriptions->country->logo)),
+                    'descriptions' => [
+                        'description_id' => $descriptions->d_id,
+                        'description' => $descriptions->description,
+                        'video_link' => $descriptions->video->v_link ?? null,
+                        'sub_decription' => $descriptions->subdescripitons ?? null,
+                        'images' => [],
+                        'read_list' => [],
+                    ],
                 ];
+                if ($descriptions->testimg->isNotEmpty()) {
 
-                if ($item->testdescription->isNotEmpty()) {
-                    $test = $item->testdescriptions;
-                    $descriptionData['read_link'] = $test->description;
+                    foreach ($descriptions->testimg as $img) {
+                        // $storeDescriptions['descriptions']['images'] = [];
+                        $storeDescriptions['descriptions']['images'][] = url(asset('storage/' . $img->images));
+                    }
                 } else {
-                    $descriptionData['read_link'] = null;
+                    $storeDescriptions['images'] = null;
                 }
-                array_push($responseData, $descriptionData);
+                if ($descriptions->testDescription->isNotEmpty()) {
+                    // $storeDescriptions['descriptions']['read_list'] = [];
+                    foreach ($descriptions->testDescription as $details) {
+                        $storeDescriptions['descriptions']['read_list'][] = $details->description;
+                    }
+                } else {
+                    $storeDescriptions['read_list'] = null;
+                }
+                array_push($allData, $storeDescriptions);
             }
+            return response()->json(['data' => $allData]);
 
-            return response()->json(['data' => $responseData]);
         } else {
             $response = ['message' => 'Data Not Found'];
             return response()->json($response);
         }
     }
-
 }
