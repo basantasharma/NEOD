@@ -23,21 +23,14 @@
             
             <nav class="navbar navbar-expand-lg bg-secondary p-3">
                 <DIV class="col-3 d-flex justify-content-center fw-bold"><a class="navbar-brand text-light fs-4" href="{{route('logincheck')}}">NEOD</a></DIV>
+                 {{-- <DIV class="col-3 d-flex justify-content-start fw-bold"><a class="navbar-brand text-light fs-4" href="{{route('admin.back')}}">Back</a></DIV>  --}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
               
                 <div class="collapse navbar-collapse col-7 d-flex justify-content-center" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
-                        @auth
-                    <li class="nav-item">
-                      <a class="nav-link fw-bold" href="{{route('logincheck')}}" >Country Guidelines</a>
-                    </li>     
-                    {{-- <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{route('admin.showTestPage')}}" >Proficency Test</a>
-                    </li>                  --}}
-                        @endauth   
-
+ 
                   </ul>                 
                 </div>
                 <div class="col-2 d-flex justify-content-center">
@@ -46,15 +39,9 @@
                     @endauth
                 </div>
               </nav>
-              
-                  
+            
         </header>
-        <main>
-         
-        </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+    
         <!-- Bootstrap JavaScript Libraries -->
         <script>
         // open(){
