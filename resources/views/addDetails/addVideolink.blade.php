@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-<div class="border border-2 p-3 mt-5 rounded" style="margin-left: 30%; margin-right:30%;">
+<div class="border border-2 p-3 mt-5 rounded" style="margin-left: 30%; margin-right:30%; height: 450px;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Video Link Form</span></div>
   <hr>
 
@@ -46,5 +46,10 @@
 setTimeout(function(){
   document.getElementById("videoStatus").style.display ="none";
 },3000)
+
+var x=  document.getElementById('videoLink').classList.add("menu-open");
+var xy=  document.getElementById('addVideoLink').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
+console.log(x);
+console.log(xy);
 </script>
 @endsection

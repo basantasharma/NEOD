@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-<div class="border border-2 p-3 mt-5" style="margin-left: 30%; margin-right:30%;">
+<div class="border border-2 p-1 mt-3 mb-3" style="margin-left: 30%; margin-right:30%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Description Form</span></div>
   <hr>
   <div id="descriptionStatus" class="align-items-center mt-1">
@@ -95,5 +95,11 @@
   setTimeout(function () {
    document.getElementById("descriptionStatus").style.display = "none";
    }, 3000);  
+
+   var x=  document.getElementById('description').classList.add("menu-open");
+var xy=  document.getElementById('addDescription').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
+console.log(x);
+console.log(xy);
+   
 </script>
 @endsection

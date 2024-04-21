@@ -23,6 +23,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['isUser'])->group(function () {
         route::get('/dashboard', [AuthController::class, 'home'])->name('dashboard');
         route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+        route::get('/back', [TestController::class, 'back'])->name('back');
 
         //READ LINK ROUTES.................................................................
 

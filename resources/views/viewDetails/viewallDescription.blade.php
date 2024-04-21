@@ -1,12 +1,7 @@
 @extends('base')
 @section('content')
 
-
-<div class="mt-3 d-flex justify-content-center">
-  <h4>Descriptions</h4>
-</div>
-
-<a href="{{route('admin.description')}}" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Description</button></a>
+{{-- <a href="{{route('admin.description')}}" class="me-4 d-flex justify-content-end text-decoration-none"><button class="btn btn-success ">Add Description</button></a> --}}
 
 <div id="Status" class="align-items-center" style="margin-left: 35%; margin-right:35%;">
   @if(Session::has('success'))
@@ -40,13 +35,13 @@
             <td>{{$item->description}}</td>   
             <td>{{$item->video->name}}</td>   
             <td>{{$item->sub_description}}</td>    
-            <td>
+            <td >
               <a href="{{route('admin.addTestDescription',['id'=> $item->d_id])}}"><button class="bg-success">Add</button></a>
               <a href="{{route('admin.viewAllDescription',['id'=> $item->d_id])}}"><button class="bg-primary">View</button></a>
               <a href="{{route('admin.viewImagePage',['id'=> $item->d_id])}}"><button style="background-color: rgb(225, 48, 154);">Image</button></a>
             </td>    
                 
-            <td>
+            <td >
                 <a href="{{route('admin.editDescription',['id'=>$item->d_id])}}"><button class="bg-secondary">Edit</button></a>
                 <a href="{{route('admin.deleteDetails',['d_id'=> $item->d_id])}}"><button class="bg-danger">Delete</button></a>
               </td>
@@ -65,5 +60,9 @@ setTimeout(function(){
   document.getElementById("Status").style.display ="none";
 },3000)  
 
+var x=  document.getElementById('description').classList.add("menu-open");
+    var xy=  document.getElementById('viewDescription').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
+    console.log(x);
+    console.log(xy);
 </script>
 @endsection

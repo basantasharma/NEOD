@@ -156,42 +156,8 @@ class TestController extends Controller
 
     }
 
-    // //pteImages..........................................................
-    // public function addPteImagePage()
-    // {
-    //     return view('test.pteForm');
-
-    // }
-    // public function postPteImagePage(Request $request)
-    // {
-    //     $request->validate([
-    //         'pteimg' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
-    //     ]);
-    //     $pteimage = time() . "neod." . $request->file('pteimg')->getClientOriginalExtension();
-    //     $path = $request->file('pteimg')->storeAs('public/pteimg/images/' . $pteimage);
-    //     $newpath = str_replace('public/', '', $path);
-
-    //     $photo = new testimage;
-    //     $photo->images = $newpath;
-    //     $photo->Exam = ('pte');
-
-    //     $save = $photo->save();
-    //     if ($save) {
-    //         return redirect()->route('admin.viewImagePage')->with('success', 'Image Uploaded successfully.');
-    //     } else {
-    //         return redirect()->route('admin.addPteImagePage')->with('fail', 'Image not uploaded.You have to delete previous on to add another');
-    //     }
-    // }
-
-    // public function deletePteImage($id)
-    // {
-    //     $del = testimage::find($id);
-    //     if (is_null($del)) {
-    //         return redirect()->route('admin.viewImagePage')->with('fail', 'Cannot be deleted.');
-    //     } else {
-    //         $del->delete();
-    //         return redirect()->route('admin.viewImagePage')->with('success', 'Image deleted successfully.');
-    //     }
-    // }
-
+    public function back()
+    {
+        return redirect()->back();
+    }
 }

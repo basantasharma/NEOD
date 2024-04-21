@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\country;
 use App\Models\description;
-use app\Models\sub;
-use App\Models\read;
+use Illuminate\Support\Facades\DB;
 use App\Models\testdescription;
 use App\Models\video;
 use Illuminate\Http\Request;
@@ -17,8 +16,7 @@ class ViewdetailsController extends Controller
     //Alldetails...................................................................................................
     public function viewDetails()//view........
     {
-        // $allDescriptions = Description::with('testDescription')->get();
-        // dd($allDescriptions);
+
         $allDetails = description::all()->sortBy(function ($query) {
             return $query->country->id;
         });

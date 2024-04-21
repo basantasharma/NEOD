@@ -5,15 +5,7 @@
   <hr>
   <form class="p-3" action="{{route('admin.updateCountry',['id'=>$country->id])}}" method="POST" enctype="multipart/form-data">
     @csrf
-    {{-- <div class="form-group">
-      <label for="name">Edit Country</label><br>
-      <input type="text" class="form-control mt-2" name="country" id="name" value="{{ old('country') }}" placeholder="Write a country.">
-      <div class="mt-1" id="validateMsg">
-        @error('country')
-          <span class="text-danger">{{$message}}</span>
-      @enderror
-      </div>
-    </div><br> --}}
+   
     <label class="mb-2 mt-2" for="countryImage">Choose a Country Flag or Map.</label>
         <div class="input-group mb-4">
         <input type="file" class="form-control" name="countryImage" id="countryImage" required>
