@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-<div class="border border-2 p-3 mt-5" style="margin-left: 30%; margin-right:30%;">
+<div class="mt-5" style="margin-left: 20%; margin-right:20%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Sub Description Form</span></div>
   <hr>
   <form class="p-3" method="post" action="{{route('admin.postdescription')}}" >

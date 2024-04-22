@@ -16,8 +16,9 @@ class TestController extends Controller
         return view('test');
     }
 
-    public function viewAllDescription($id)
+    public function viewAllDescription(Request $request)
     {
+        $id = $request->id;
         $details = testdescription::where('t_id', $id)->get();
         if ($details) {
             $data = compact('details');
@@ -27,8 +28,10 @@ class TestController extends Controller
         }
     }
 
-    public function addTestDescription($id)
+    public function addTestDescription(Request $request)
     {
+        $id = $request->id;
+
         $read = description::find($id);
         if (is_null($read)) {
             return redirect()->route('admin.viewDetails')->with('fail', 'No data found');
@@ -40,8 +43,10 @@ class TestController extends Controller
     }
 
 
-    public function deleteTestDescription($id)
+    public function deleteTestDescription(Request $request)
     {
+        $id = $request->id;
+
         $test = testdescription::find($id);
         if (!is_null($test)) {
             $test->delete();
@@ -52,8 +57,10 @@ class TestController extends Controller
 
     }
 
-    public function postTestDescription(request $request, $id)
+    public function postTestDescription(request $request)
     {
+        $id = $request->id;
+
         $item = description::find($id);
         if ($item) {
             $request->validate([
@@ -71,8 +78,9 @@ class TestController extends Controller
         }
     }
 
-    public function editTestDescription($id)
+    public function editTestDescription(request $request)
     {
+        $id = $request->id;
         $edit = testdescription::find($id);
         if (!is_null($edit)) {
             $data = compact('edit');
@@ -82,8 +90,10 @@ class TestController extends Controller
         }
     }
 
-    public function updateTestdescription($id, Request $request)
+    public function updateTestdescription(Request $request)
     {
+        $id = $request->id;
+
         $request->validate([
             'description' => 'required|min:5',
         ]);
@@ -101,8 +111,10 @@ class TestController extends Controller
 
     //Ielts imagesssss...........................................................................
 
-    public function viewImagePage($id)
+    public function viewImagePage(request $request)
     {
+        $id = $request->id;
+
         $image = description::find($id);
         if ($image) {
             $photo = testimage::where('img_id', $id)->get();
@@ -113,15 +125,19 @@ class TestController extends Controller
         }
     }
 
-    public function addImagePage($id)
+    public function addImagePage(request $request)
     {
+        $id = $request->id;
+
         $image = description::find($id);
 
         return view('test.addImageForm', compact('image'));
 
     }
-    public function postImagePage(Request $request, $id)
+    public function postImagePage(Request $request)
     {
+        $id = $request->id;
+
         $request->validate([
             'addImage' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
         ]);
@@ -144,8 +160,10 @@ class TestController extends Controller
 
 
 
-    public function deleteImage($id)
+    public function deleteImage(request $request)
     {
+        $id = $request->id;
+
         $test = testimage::find($id);
         if (!is_null($test)) {
             $test->delete();

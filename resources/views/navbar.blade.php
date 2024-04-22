@@ -19,11 +19,10 @@
     </head>
 
     <body>
-        <header>
-            
-            <nav class="navbar navbar-expand-lg bg-secondary p-3">
-                <DIV class="col-3 d-flex justify-content-center fw-bold"><a class="navbar-brand text-light fs-4" href="{{route('logincheck')}}">NEOD</a></DIV>
-                 {{-- <DIV class="col-3 d-flex justify-content-start fw-bold"><a class="navbar-brand text-light fs-4" href="{{route('admin.back')}}">Back</a></DIV>  --}}
+        
+              @auth
+              <nav class="navbar navbar-expand-lg bg-secondary p-3">
+                <DIV class="col-3 d-flex justify-content-center "><a class="navbar-brand text-light fs-6" href="/home">Home</a></DIV>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,13 +33,13 @@
                   </ul>                 
                 </div>
                 <div class="col-2 d-flex justify-content-center">
-                    @auth
+           
                     <a href="{{route('admin.logout')}}" class="d-flex justify-conteny-end text-decoration-none"><li class="btn btn-primary border border-3 border-primary fw-bold">Logout</li></a>
-                    @endauth
                 </div>
               </nav>
+              @endauth
             
-        </header>
+       
     
         <!-- Bootstrap JavaScript Libraries -->
         <script>

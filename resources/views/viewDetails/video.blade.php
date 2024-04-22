@@ -32,7 +32,7 @@
             <td>{{$items->v_link}}</td>
             <td>
                 <a href="{{route('admin.deleteVideo',['id'=> $items->id])}}"><button class="bg-danger ">Delete</button></a>
-                <a href="{{route('admin.editVideoLink',['id'=> $items->id])}}"><button class="bg-primary">Edit</button></a>
+                <a href="{{route('admin.editVideoLink')}}?id={{ $items->id }}"><button class="bg-primary">Edit</button></a>
             </td>
         </tr>
             @endforeach

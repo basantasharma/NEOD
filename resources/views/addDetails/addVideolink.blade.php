@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-<div class="border border-2 p-3 mt-5 rounded" style="margin-left: 30%; margin-right:30%; height: 450px;">
+<div class="p-3 mt-5 rounded" style="margin-left: 20%; margin-right:20%; height: 450px;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Video Link Form</span></div>
   <hr>
 

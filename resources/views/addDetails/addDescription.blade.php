@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-<div class="border border-2 p-1 mt-3 mb-3" style="margin-left: 30%; margin-right:30%;">
+<div class="  mt-3 mb-3" style="margin-left: 20%; margin-right:20%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Description Form</span></div>
   <hr>
   <div id="descriptionStatus" class="align-items-center mt-1">

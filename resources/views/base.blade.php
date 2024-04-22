@@ -21,8 +21,8 @@
 <body class=" sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
 
     <div class="app-wrapper">  
-       @include('navbar')
-    @include('sidebar')
+        @include('navbar')
+        @include('sidebar')
     @yield('content')   
 </div> 
   <footer class="app-footer"> <!--begin::To the end-->
