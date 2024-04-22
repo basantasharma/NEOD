@@ -34,8 +34,8 @@
               <img src="{{asset('storage/'.$items->logo)}}" alt="{{$items->name}}.img" class="img-thumbnail" style="width: 120px; height:100px;" >
             </td> 
             <td>        
-            <a href="{{route('admin.deleteCountry',['id'=>$items->id])}}"><button class="bg-danger ">Delete</button></a> 
-            <a href="{{route('admin.editCountry',['id'=>$items->id])}}"><button class="bg-primary">Edit</button></a>            
+            <a href="{{route('admin.deleteCountry',['id'=>$items->id])}}"><button class="bg-danger  me-2">Delete</button></a> 
+            <a href="{{route('admin.editCountry')}}?id={{ $items->id }}"><button class="bg-primary">Edit Image</button></a>            
           </td>
         </tr>
             @endforeach

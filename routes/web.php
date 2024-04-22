@@ -43,7 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::post('/postvideolink', 'App\Http\Controllers\AdddetailsController@postvideolink')->name('postvideolink');//post
         route::get('/view/videolinks', [ViewdetailsController::class, 'viewVideo'])->name('viewVideo');//viewList
         route::get('/videolink/delete/{id}', [ViewdetailsController::class, 'deleteVideo'])->name('deleteVideo');//delete....
-        route::get('/edit/videolink/{id}', [ViewdetailsController::class, 'editVideoLink'])->name('editVideoLink');//edit..........
+        route::get('/edit-videolink', [ViewdetailsController::class, 'editVideoLink'])->name('editVideoLink');//edit..........
         route::post('/update/videolink/{id}', [ViewdetailsController::class, 'updateVideoLink'])->name('updateVideoLink');//update......
 
 
@@ -54,7 +54,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::post('/postcountry', 'App\Http\Controllers\AdddetailsController@postcountry')->name('postcountry');//post
         route::get('/view/country', [ViewdetailsController::class, 'viewCountry'])->name('viewCountry');//viewList
         route::get('/country/delete/{id}', [ViewdetailsController::class, 'deleteCountry'])->name('deleteCountry');//delete....
-        route::get('/edit/country/{id}', [ViewdetailsController::class, 'editCountry'])->name('editCountry');//edit.....
+        route::get('/edit-country', [ViewdetailsController::class, 'editCountry'])->name('editCountry');//edit.....
         route::post('/update/country/{id}', [ViewdetailsController::class, 'updateCountry'])->name('updateCountry');//update...
 
 
@@ -66,25 +66,25 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::post('/postdecription', 'App\Http\Controllers\AdddetailsController@postdescription')->name('postdescription');//post
         route::get('/viewDetails', [ViewdetailsController::class, 'viewDetails'])->name('viewDetails'); //viewList
         route::get('/deleteDetails/{d_id}', [ViewdetailsController::class, 'deleteDetails'])->name('deleteDetails'); //delete
-        route::get('/edit/description/{id}', [ViewdetailsController::class, 'editDescription'])->name('editDescription');//edit.....
+        route::get('/edit-description', [ViewdetailsController::class, 'editDescription'])->name('editDescription');//edit.....
         route::post('/update/description/{id}', [ViewdetailsController::class, 'updateDescription'])->name('updateDescription');//update...
 
 
         //Test page..............................................
         // test description.............
         // route::get('/reading description/page', [TestController::class, 'showTestPage'])->name('showTestPage');
-        route::get('/view all/reading/description/{id}', [TestController::class, 'viewAllDescription'])->name('viewAllDescription');///
-        route::get('/add/reading description/{id}', [TestController::class, 'addTestDescription'])->name('addTestDescription');
-        route::post('/post/reading description/{id}', [TestController::class, 'postTestDescription'])->name('postTestDescription');//
-        route::get('/edit/reading description/{id}', [TestController::class, 'editTestDescription'])->name('editTestDescription');//
-        route::post('/update/reading description/{id}', [TestController::class, 'updateTestDescription'])->name('updateTestDescription');//
-        route::get('/delete/reading description/{id}', [TestController::class, 'deleteTestDescription'])->name('deleteTestDescription');//
+        route::get('/view all/reading description/', [TestController::class, 'viewAllDescription'])->name('viewAllDescription');///
+        route::get('/add/reading description/', [TestController::class, 'addTestDescription'])->name('addTestDescription');
+        route::post('/post/reading description/', [TestController::class, 'postTestDescription'])->name('postTestDescription');//
+        route::get('/edit/reading-description', [TestController::class, 'editTestDescription'])->name('editTestDescription');//
+        route::post('/update/reading description/', [TestController::class, 'updateTestDescription'])->name('updateTestDescription');//
+        route::get('/delete/reading description/', [TestController::class, 'deleteTestDescription'])->name('deleteTestDescription');//
 
         //test images..................................................
-        route::get('/reading description/view image/page/{id}', [TestController::class, 'viewImagePage'])->name('viewImagePage');
-        route::get('/reading description/add image/page/{id}', [TestController::class, 'addImagePage'])->name('addImagePage');
-        route::post('/reading description/post image/page/{id}', [TestController::class, 'postImagePage'])->name('postImagePage');
-        route::get('/reading description/delete image/page/{id}', [TestController::class, 'deleteImage'])->name('deletePhoto');
+        route::get('/view image', [TestController::class, 'viewImagePage'])->name('viewImagePage');
+        route::get('/readin description-addImage', [TestController::class, 'addImagePage'])->name('addImagePage');
+        route::post('/reading description/post image/page/', [TestController::class, 'postImagePage'])->name('postImagePage');
+        route::get('/reading description/delete image/page/', [TestController::class, 'deleteImage'])->name('deletePhoto');
 
         // route::get('/reading description/add image/page/pte', [TestController::class, 'addPteImagePage'])->name('addPteImagePage');
         // route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');

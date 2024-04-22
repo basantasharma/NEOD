@@ -24,7 +24,7 @@
             <th scope="col" class="text-warning">Description</th>        
             <th scope="col" class="text-warning">Video Link Name</th>        
             <th scope="col" class="text-warning">Sub Description</th>
-            <th scope="col" class="text-warning">Reading Description</th>        
+            <th scope="col" class="text-warning">Reading lists</th>        
             <th scope="col" class="text-warning">Action</th>
           </tr>
         </thead>
@@ -35,14 +35,14 @@
             <td>{{$item->description}}</td>   
             <td>{{$item->video->name}}</td>   
             <td>{{$item->sub_description}}</td>    
-            <td >
-              <a href="{{route('admin.addTestDescription',['id'=> $item->d_id])}}"><button class="bg-success">Add</button></a>
-              <a href="{{route('admin.viewAllDescription',['id'=> $item->d_id])}}"><button class="bg-primary">View</button></a>
-              <a href="{{route('admin.viewImagePage',['id'=> $item->d_id])}}"><button style="background-color: rgb(225, 48, 154);">Image</button></a>
+            <td class="p-3">
+              <a href="{{route('admin.addTestDescription')}}?id={{ $item->d_id }}"><button class="bg-success">Add</button></a>
+              <a href="{{route('admin.viewAllDescription')}}?id={{ $item->d_id }}"><button class="bg-primary">View</button></a>
+              <a href="{{route('admin.viewImagePage')}}?id={{ $item->d_id }}"><button style="background-color: rgb(225, 48, 154);">Image</button></a>
             </td>    
                 
             <td >
-                <a href="{{route('admin.editDescription',['id'=>$item->d_id])}}"><button class="bg-secondary">Edit</button></a>
+                <a href="{{route('admin.editDescription')}}?id={{ $item->d_id }}"><button class="bg-secondary">Edit</button></a>
                 <a href="{{route('admin.deleteDetails',['d_id'=> $item->d_id])}}"><button class="bg-danger">Delete</button></a>
               </td>
         </tr>

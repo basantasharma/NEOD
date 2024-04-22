@@ -1,7 +1,7 @@
 
   @extends('base')
 @section('content')
-<div class="border border-2 p-3 mt-5" style="margin-left: 28%; margin-right:28%;">
+<div class="p-3 mt-5" style="margin-left: 20%; margin-right:20%;">
   <div class="d-flex justify-content-center mb-3 fw-bold fs-4"><span class="text-danger">Choose Image</span></div>
   <hr>
   <form class="p-3" method="post" action="{{route('admin.postImagePage',['id'=>$image->d_id])}}" enctype="multipart/form-data" >
@@ -33,6 +33,12 @@
   </div>
 </div>
 <script>
+var x=  document.getElementById('description').classList.add("menu-open");
+    var xy=  document.getElementById('viewDescription').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
+    console.log(x);
+    console.log(xy);
+
+
   setTimeout(function () {
    document.getElementById("descriptionStatus").style.display = "none";
    }, 3000);  

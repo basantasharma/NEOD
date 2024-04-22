@@ -14,9 +14,10 @@ class ViewdetailsController extends Controller
 {
 
     //Alldetails...................................................................................................
-    public function viewDetails()//view........
+    public function viewDetails(request $request)//view........
     {
 
+        $id = $request->id;
         $allDetails = description::all()->sortBy(function ($query) {
             return $query->country->id;
         });
@@ -25,8 +26,10 @@ class ViewdetailsController extends Controller
     }
 
 
-    public function editDescription($id)
+    public function editDescription(request $request)
     {
+        $id = $request->id;
+
         $item = Description::find($id);
         if (!is_null($item)) {
             $data = compact('item');
@@ -48,7 +51,7 @@ class ViewdetailsController extends Controller
         $item->sub_description = $request->subdescription;
         $save = $item->save();
         if ($save) {
-            return redirect('/admin/viewDetails')->with('success', ' Description Updated Succcessfully.');
+            return redirect()->back()->with('success', ' Description Updated Succcessfully.');
         } else {
             return redirect('/admin/viewDetails')->with('fail', 'Update not successfull.');
         }
@@ -130,8 +133,10 @@ class ViewdetailsController extends Controller
         return redirect('admin/view/videolinks')->with('success', 'Video link deleted Successfully');
     }
 
-    public function editVideoLink($id)
+    public function editVideoLink(Request $request)
     {
+
+        $id = $request->id;
         $videoLink = video::find($id);
         if (!is_null($videoLink)) {
             $data = compact('videoLink');
@@ -178,8 +183,10 @@ class ViewdetailsController extends Controller
         return redirect('/admin/view/country')->with('success', 'Country deleted Successfully');
     }
 
-    public function editCountry($id)
+    public function editCountry(Request $request)
     {
+        // dd($request->id);
+        $id = $request->id;
         $country = country::find($id);
 
         if (is_null($country)) {
