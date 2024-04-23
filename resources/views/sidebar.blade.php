@@ -16,54 +16,54 @@
                 </a>
             </li>
           
-            <li class="nav-item" id="country"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
+            <li class="nav-item" id="country"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-globe2"></i>
                 <p class="fw-bold">
                Country
                     <i class="nav-arrow bi bi-chevron-right"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview" id="addCountry">
-                <li class="nav-item"> <a href="{{route('admin.country')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                <li class="nav-item"> <a href="{{route('admin.country')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
                         <p>Add Country</p>
                     </a> </li>
             </ul>
             <ul class="nav nav-treeview" id="viewCountry">
-                <li class="nav-item"> <a href="{{route('admin.viewCountry')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                <li class="nav-item"> <a href="{{route('admin.viewCountry')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
                         <p>View Country</p>
                     </a> </li>
             </ul>
         </li>
      
-            <li class="nav-item " id="videoLink"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
+            <li class="nav-item " id="videoLink"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-camera-reels"></i>
                     <p class="fw-bold">
                        Video Links
                         <i class="nav-arrow bi bi-chevron-right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview" id="addVideoLink">
-                    <li class="nav-item"> <a href="{{route('admin.videolink')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                    <li class="nav-item"> <a href="{{route('admin.videolink')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
                             <p>Add Video Link</p>
                         </a> </li>
                 </ul>
                 <ul class="nav nav-treeview" id="viewVideoLink">
-                    <li class="nav-item"> <a href="{{route('admin.viewVideo')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                    <li class="nav-item"> <a href="{{route('admin.viewVideo')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
                             <p>View video links</p>
                         </a> </li>
                 </ul>
             </li>
-            <li class="nav-item " id="description"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
+            <li class="nav-item " id="description"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-journal-text"></i>
                 <p class="fw-bold">
                    Description
                     <i class="nav-arrow bi bi-chevron-right"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview" id="addDescription">
-                <li class="nav-item"> <a href="{{route('admin.description')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                <li class="nav-item"> <a href="{{route('admin.description')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
                         <p>Add Description</p>
                     </a> </li>
             </ul>
             <ul class="nav nav-treeview" id="viewDescription">
-                <li class="nav-item"> <a href="{{route('admin.viewDetails')}}" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                <li class="nav-item"> <a href="{{route('admin.viewDetails')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
                         <p>View Description</p>
                     </a> </li>
             </ul>

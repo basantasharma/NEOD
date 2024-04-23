@@ -77,8 +77,8 @@
            Sub Description
           </label>
         </div>
-        <div class="col-7 ">
-         <textarea name="subdescription" id="description" rows="5" class="form-control" ></textarea>
+        <div class="abc col-7 ">
+         <textarea name="subdescription" id="description" placeholder="(optional)" rows="5" class="form-control" ></textarea>
          @error('subdescription')
          <span class="text-danger">{{$message}}</span>
          @enderror
@@ -102,4 +102,5 @@ console.log(x);
 console.log(xy);
    
 </script>
+
 @endsection

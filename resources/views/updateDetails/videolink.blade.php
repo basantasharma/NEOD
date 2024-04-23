@@ -8,7 +8,7 @@
     @csrf
     <div class="form-group ">
       <label for="name">Change Name</label><br>
-      <input type="text" class="form-control mt-2" name="name" id="name" value="{{old('name')}}" placeholder="Video link name">
+      <input type="text" class="form-control mt-2" name="name" id="name" value="{{$videoLink->name}}" placeholder="Video link name">
       <div class="mt-1">
         @error('name')
       <span class="text-danger">{{$message}}</span>
@@ -18,7 +18,7 @@
 
     <div class="form-group mt-4">
       <label for="videolink">Change Link</label><br>
-      <input type="text" class="form-control mt-2" name="link" id="videolink" placeholder="Video link">
+      <input type="text" class="form-control mt-2" value="{{$videoLink->v_link}}" name="link" id="videolink" placeholder="Video link">
      <div class="mt-1">
       @error('link')
       <span class="text-danger">{{$message}}</span>

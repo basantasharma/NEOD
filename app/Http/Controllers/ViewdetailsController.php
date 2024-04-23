@@ -200,7 +200,7 @@ class ViewdetailsController extends Controller
     public function updateCountry(Request $request, $id)
     {
         $request->validate([
-            // 'country' => 'required|unique:countries,name',
+            'name' => 'required',
             'countryImage' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
 
         ]);
@@ -214,7 +214,7 @@ class ViewdetailsController extends Controller
         $path = $request->file('countryImage')->storeAs('public/country/logo/' . $image);
         $newpath = str_replace('public/', '', $path);
 
-        // $country->name = $request->country;
+        $country->name = $request->name;
         $country->logo = $newpath;
         $save = $country->save();
         if ($save) {

@@ -4,7 +4,7 @@
 {{-- <a href="{{route('admin.country')}}" class="d-flex justify-content-end me-4 text-decoration-none"><button class="btn btn-success ">Add Country</button></a> --}}
 
 <div class="mt-3 mb-3" style="margin-left: 2%; margin-right:2%;">
-  <div id="abcd" class="align-items-center"  style="margin-left: 35%; margin-right:35%;">
+  <div id="abcd" class="align-items-center mt-1 mb-3"  style="margin-left: 35%; margin-right:35%;">
     @if(Session::has('success'))
    <div class="form-control bg-success">
     <p class="text-small text-center text-light align-items-center">{{session::get('success')}}</p>
