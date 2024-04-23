@@ -6,6 +6,7 @@ use App\Models\User;
 use illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Http\Request;
+use App\models\country;
 
 class AuthController extends Controller
 {
@@ -41,8 +42,9 @@ class AuthController extends Controller
     }
     public function home()
     {
-
-        return view('dashboard');
+        $country = country::count();
+        $data = compact('country');
+        return view('dashboard')->with($data);
 
     }
 
