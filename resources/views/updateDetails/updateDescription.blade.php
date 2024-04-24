@@ -13,7 +13,11 @@
           </label>
         </div>
         <div class="col-7 ">
-         <textarea name="description" id="description"  rows="5" class="form-control" required></textarea>
+         <textarea name="description" id="description" rows="5" class="form-control" required>
+          @if($item->description)
+          {{$item->description}}
+          @endif
+         </textarea>
          @error('description')
          <span class="text-danger">{{$message}}</span>
          @enderror
@@ -26,7 +30,11 @@
           </label>
         </div>
         <div class="col-7 ">
-         <textarea name="subdescription" id="description" placeholder="(optional)" rows="5" class="form-control"></textarea>
+         <textarea name="subdescription" id="description" placeholder="(optional)" rows="5" class="form-control">
+          @if($item->sub_description)
+          {{$item->sub_description}}
+          @endif
+         </textarea>
          @error('description')
          <span class="text-danger">{{$message}}</span>
          @enderror
