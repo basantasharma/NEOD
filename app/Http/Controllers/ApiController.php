@@ -28,21 +28,18 @@ class ApiController extends Controller
                         'description' => $descriptions->description,
                         'video_link' => $descriptions->video->v_link ?? null,
                         'sub_decription' => $descriptions->subdescripitons ?? null,
-                        'images' => [],
-                        'read_list' => [],
                     ],
                 ];
                 if ($descriptions->testimg->isNotEmpty()) {
-
+                    $storeDescriptions['descriptions']['images'] = [];
                     foreach ($descriptions->testimg as $img) {
-                        // $storeDescriptions['descriptions']['images'] = [];
                         $storeDescriptions['descriptions']['images'][] = url(asset('storage/' . $img->images));
                     }
                 } else {
                     $storeDescriptions['images'] = null;
                 }
                 if ($descriptions->testDescription->isNotEmpty()) {
-                    // $storeDescriptions['descriptions']['read_list'] = [];
+                    $storeDescriptions['descriptions']['read_list'] = [];
                     foreach ($descriptions->testDescription as $details) {
                         $storeDescriptions['descriptions']['read_list'][] = $details->description;
                     }

@@ -13,7 +13,12 @@
           </label>
         </div>
         <div class="col-7 ">
-         <textarea name="description" id="description" rows="5" class="form-control" required></textarea>
+         <textarea name="description" id="description" rows="5" class="form-control" required>
+          @if($edit->description)
+          {{$edit->description}}
+          @endif
+
+         </textarea>
          @error('description')
          <span class="text-danger">{{$message}}</span>
          @enderror
