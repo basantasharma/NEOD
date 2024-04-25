@@ -1,5 +1,5 @@
-@extends('base')
-@section('content')
+@extends('users.base')
+@section('users-content')
 <div class="d-flex justify-content-center">
     <div class="w-75 mt-2  border border-1 p-4">
         <form action="{{route('registering')}}" method="POST" class="mt-3 mb-3" id="register_form">
