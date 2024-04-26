@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/country/data', [ApiController::class, 'getCountry'])->name('getCountry');
+Route::get('/all/descriptionlist/{country}', [ApiController::class, 'getList'])->name('countryDescriptionList');
 Route::get('/all/descriptions/{country}', [ApiController::class, 'getData'])->name('countryDescription');
-// Route::get('/all/descriptions', [ApiController::class, 'getData'])->name('countryDescription');
-// Route::get('/country/{id}/descriptions', [ApiController::class, 'viewData'])->name('countryDescriptionId');
+Route::get('/all/read/descriptionlist/{id}', [ApiController::class, 'getReadListData'])->name('countryDescriptionList');
+Route::get('/all/descriptionlist/data/{country}', [ApiController::class, 'getListData'])->name('countryDescriptionListData');
+
