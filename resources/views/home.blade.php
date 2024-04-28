@@ -65,7 +65,11 @@
         <h1 class="paragraph">Our Service</h1>
         <hr class="w-25 mx-auto">
         <div class="grid">
-            <div class=""></div>
+            <div class="our provide">
+                <img src="" alt="">
+
+
+            </div>
 
 
         </div>
