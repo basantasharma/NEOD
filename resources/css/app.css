@@ -1,0 +1,65 @@
+.container{
+    position: sticky;
+   
+    
+}
+.background{
+    /* background: url("storage/frontpage/doremon.png"); */
+    /* background: url("{{ asset('/img/frontpage/doremon.png') }}") no-repeat center; */
+    background: url("/public/storage/frontpage/home1.jpeg") no-repeat center;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 800px;}
+
+.language{
+    padding: 100px;
+    color: blue;
+}
+.information{
+    margin-left: 100px;
+    
+}
+.text-left{
+    margin: 100px;
+   
+    
+}
+.about{
+    text-align: center;
+    padding: 10px;
+    
+}
+.about-format{
+    display: flex;
+    padding: 50px 150px;
+}
+.about-img{
+    margin: 10px;
+    
+}
+.about-content{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  
+}
+.service{
+    background: url("/public/storage/service-img/neod.png")no-repeat center;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
+.paragraph{
+    text-align: center;
+    padding: auto;
+    
+}
+.down{
+    background-color:rgb(37, 12, 61);
+    color: aliceblue;
+
+
+}

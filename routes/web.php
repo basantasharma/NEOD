@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomepageController;
 use app\Http\Controllers\AdddetailsController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ViewdetailsController;
 use App\Models\description;
 use Illuminate\Support\Facades\Route;
 
-route::get('/', [AuthController::class, 'logincheck'])->name('logincheck');
+route::get('/', [HomepageController::class, 'home'])->name('home');
 
 
 route::get('/login', [AuthController::class, 'loginDisplay'])->name('loginDisplay');
