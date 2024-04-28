@@ -28,6 +28,7 @@
   <div class="mt-5 d-flex" style="margin-left: 2%; margin-right:2%;">
   @foreach($photo as $item)
     <div class="col-6 ">
+      <p class="text-center">{{$item->title}}</p>
       <div class="d-flex justify-content-center">
         <img src="{{asset('storage/'. $item->images)}}" style="height:450px; width:380px;" alt="...." class="border p-4">
       </div>

@@ -40,7 +40,7 @@ class AuthController extends Controller
             return redirect()->back()->with('fail', 'Something is wrong');
         }
     }
-    public function home()
+    public function homes()
     {
         $country = country::count();
         $data = compact('country');

@@ -6,11 +6,12 @@
   <hr>
   <form class="p-3" method="post" action="{{route('admin.postImagePage',['id'=>$image->d_id])}}" enctype="multipart/form-data" >
     @csrf
+    <label for="title">Image name</label>
+    <input type="text" name="title" class="form-control mb-2 mt-3" placeholder="write appropriate name for image.">
     <label class="mb-3 mt-1" for="addImage">Choose a Image</label>
         <div class="input-group mb-3">
         <input type="file" class="form-control" name="addImage" id="addImage">
         </div>
-
         <select name="img_id" id="img_id" hidden>
           <option value="{{$image->d_id}}"></option>
         </select>
@@ -19,6 +20,10 @@
       <button type="submit" class="btn btn-success">Save Image</button>
     </div>
   </form>
+
+  <div>
+    <p class="text-danger text-center">Please choose your name carefullly.</p>
+  </div>
   <div id="descriptionStatus" class="align-items-center">
     @if(Session::has('success'))
    <div class="alert alert-success">
