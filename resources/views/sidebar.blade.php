@@ -9,7 +9,7 @@
    
         <ul class="nav sidebar-menu flex-column " data-lte-toggle="treeview" data-accordion="false">
             <li class="nav-item">       
-                    <a href="/" class="nav-link" id="dashboard">
+                    <a href="{{route('admin.dashboard')}}" class="nav-link" id="dashboard">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p class="fw-bold">Dashboard</p>
                     </a>
@@ -68,6 +68,23 @@
                     </a> </li>
             </ul>
         </li>
+        <li class="nav-item " id="page"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-journal-text"></i>
+            <p class="fw-bold">
+               Welcome Pages
+                <i class="nav-arrow bi bi-chevron-right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview" id="addpage">
+            <li class="nav-item"> <a href="{{route('admin.addPages')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
+                    <p>Add Welcome pages</p>
+                </a> </li>
+        </ul>
+        <ul class="nav nav-treeview" id="viewpage">
+            <li class="nav-item"> <a href="{{route('admin.viewpages')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
+                    <p>View Welcome Pages</p>
+                </a> </li>
+        </ul>
+    </li>
             </ul>
     </nav>
 </div>

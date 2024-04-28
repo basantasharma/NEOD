@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
 use app\Http\Controllers\AdddetailsController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ViewdetailsController;
 use App\Models\description;
@@ -22,7 +23,7 @@ route::post('/register', [AuthController::class, 'registering'])->name('register
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['isUser'])->group(function () {
-        route::get('/dashboard', [AuthController::class, 'home'])->name('dashboard');
+        route::get('/dashboard', [AuthController::class, 'homes'])->name('dashboard');
         route::get('/logout', [AuthController::class, 'logout'])->name('logout');
         route::get('/back', [TestController::class, 'back'])->name('back');
 
@@ -91,17 +92,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // route::post('/reading description/post image/page/pte', [TestController::class, 'postPteImagePage'])->name('postPteImagePage');
         // route::get('/reading description/delete image/page/pte/{id}', [TestController::class, 'deletePteImage'])->name('deletePtePhoto');
 
+        route::get('/welcome/pages', [PageController::class, 'addPage'])->name('addPages');
+        route::post('/welcome/pages/', [PageController::class, 'postPage'])->name('postPages');
+        route::get('/view/welcomepages/', [PageController::class, 'viewPage'])->name('viewpages');
 
 
 
 
 
-
-        //SubDescrition Routes............................................................
-
-        // route::get('/view/sub description/{id}', [ViewdetailsController::class, 'viewSub'])->name('viewSub');//view
-        // route::get('/add/sub description/{id}', [ViewdetailsController::class, 'addSub'])->name('addSub');//get/view
-        // route::post('/add/sub description/{id}', [ViewdetailsController::class, 'postSub'])->name('postSub');//get/view
 
     });
 });

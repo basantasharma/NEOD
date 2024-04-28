@@ -139,6 +139,7 @@ class TestController extends Controller
         $id = $request->id;
 
         $request->validate([
+            'title' => 'required',
             'addImage' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
         ]);
         $image = time() . "neod." . $request->file('addImage')->getClientOriginalExtension();
@@ -147,6 +148,7 @@ class TestController extends Controller
 
         $photoss = description::find($id);
         $photo = new testimage;
+        $photo->title = $request->title;
         $photo->images = $newpath;
         $photo->img_id = $request->img_id;
         $save = $photo->save();

@@ -12,5 +12,11 @@ class testdescription extends Model
     {
         return $this->belongsTo(description::class, 't_id');
     }
-
+    protected $fillable = [
+        'description',
+    ];
+    public function setNameAttribute($value)
+    {
+        $this->attributes['description'] = ucwords($value);
+    }
 }
