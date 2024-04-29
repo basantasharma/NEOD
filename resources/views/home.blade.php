@@ -18,7 +18,7 @@
     </div>
 
     <!-- <div class="container"> -->
-        <nav class=" navbar sticky-top navbar-expand-xxl ">
+        <nav class=" navbar sticky-top navbar-expand-md ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('storage/logos/neodlogo.png') }}" alt="Bootstrap" width="auto" height="50">
