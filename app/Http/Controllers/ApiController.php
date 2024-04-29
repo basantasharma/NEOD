@@ -6,11 +6,174 @@ use App\Models\country;
 use App\Models\description;
 use App\Models\testdescription;
 use App\Models\testimage;
+use App\Models\welcomeData;
+use App\Models\welcomePages;
 use Illuminate\Http\Request;
 use app\Models\video;
 
 class ApiController extends Controller
 {
+    
+    public function getData($country)
+    {
+        $findCountry = Country::where('name', $country)->first();
+
+        if ($findCountry) {
+            $dataCollection = Description::where('countryDescription_id', $findCountry->id)
+                ->with('testDescription', 'testimg')
+                ->get();
+            $pageData = welcomePages::all();
+            $welcome = welcomeData::all();
+            $onboarding = [];
+            foreach ($pageData as $item) {
+                $dataWelcome = [
+                    'title' => $item->title,
+                    'image' => url(asset('storage/' . $item->image)),
+                    'description' => $item->description,
+                ];
+                array_push($onboarding, $dataWelcome);
+            }
+            $welcomeData = [];
+            foreach ($welcome as $item) {
+                $dataWelcome = [
+                    'title' => $item->title,
+                    // 'image' => url(asset('storage/' . $item->image)),
+                    'description' => $item->description,
+                ];
+                array_push($welcomeData, $dataWelcome);
+            }
+
+            $dataArray = [];
+            $dataArray['country'] = $findCountry->name;
+            $dataArray['countryImage'] = url(asset('storage/' . $findCountry->logo));
+            $dataArray['descriptions'] = [];
+            foreach ($dataCollection as $data) {
+                $dataFetch = [
+                    'id' => $data->d_id,
+                    'title' => $data->description,
+                    'subdescription' => $data->sub_description ?? [],
+                    'videoLink' => $data->video->v_link,
+                    'readingText' => [],
+                    'images' => [],
+                ];
+                if ($data->testDescription) {
+                    foreach ($data->testDescription as $readingText) {
+                        $dataFetch['readingText'][] = $readingText->description;
+                    }
+                }
+                if ($data->testimg) {
+                    foreach ($data->testimg as $image) {
+
+                        // $dataImage = url(asset('storage/' . $image->images));
+                        $dataFetch['images'][] = [
+                            'title' => $image->title,
+                            'image' => url(asset('storage/' . $image->images)),
+                        ];
+                    }
+                }
+                array_push($dataArray['descriptions'], $dataFetch);
+            }
+            return response()->json(['onboarding' => $onboarding, 'welcomedata' => $welcomeData, 'Countries' => $dataArray]);
+        } else {
+            $response = ['message' => 'Data not found'];
+            return response()->json($response, 404); // Adding HTTP status code for data not found
+        }
+    }
+
+    public function getPage()
+    {
+
+        $pageData = welcomePages::all();
+        if ($pageData) {
+            $onboarding = [];
+            foreach ($pageData as $item) {
+                $dataWelcome = [
+                    'title' => $item->title,
+                    'image' => url(asset('storage/' . $item->image)),
+                    'description' => $item->description,
+                ];
+                array_push($onboarding, $dataWelcome);
+            }
+            return response()->json(['onboarding' => $onboarding]);
+        } else {
+            $response = ['message' => 'Data not found'];
+            return response()->json($response, 404); // Adding HTTP status code for data not found    
+        }
+    }
+
+    public function mainPage()
+    {
+        $findCountry = Country::all();
+
+        if ($findCountry) {
+            $welcome = welcomeData::all();
+            $welcomeData = [];
+            foreach ($welcome as $item) {
+                $dataWelcome = [
+                    'title' => $item->title,
+                    'description' => $item->description,
+                ];
+                array_push($welcomeData, $dataWelcome);
+            }
+            $dataArray = [];
+            foreach ($findCountry as $item) {
+                $dataCountry = [
+                    'country' => $item->name,
+                    'image' => url(asset('storage/' . $item->logo)),
+                ];
+                array_push($dataArray, $dataCountry);
+            }
+            return response()->json(['welcomedata' => $dataWelcome, 'countries' => $dataArray]);
+        } else {
+            $response = ['message' => 'Data not found'];
+            return response()->json($response, 404); // Adding HTTP status code for data not found
+        }
+    }
+    
+    public function getCountryData($country)
+    {
+        $findCountry = Country::where('name', $country)->first();
+
+        if ($findCountry) {
+            $dataCollection = Description::where('countryDescription_id', $findCountry->id)
+                ->with('testDescription', 'testimg')
+                ->get();
+            $dataArray = [];
+            $dataArray['country'] = $findCountry->name;
+            $dataArray['countryImage'] = url(asset('storage/' . $findCountry->logo));
+            $dataArray['descriptions'] = [];
+            foreach ($dataCollection as $data) {
+                $dataFetch = [
+                    'id' => $data->d_id,
+                    'title' => $data->description,
+                    'subdescription' => $data->sub_description ?? [],
+                    'videoLink' => $data->video->v_link,
+                    'readingText' => [],
+                    'images' => [],
+                ];
+                if ($data->testDescription) {
+                    foreach ($data->testDescription as $readingText) {
+                        $dataFetch['readingText'][] = $readingText->description;
+                    }
+                }
+                if ($data->testimg) {
+                    foreach ($data->testimg as $image) {
+
+                        $dataFetch['images'][] = [
+                            'title' => $image->title,
+                            'image' => url(asset('storage/' . $image->images)),
+                        ];
+                    }
+                }
+                array_push($dataArray['descriptions'], $dataFetch);
+            }
+            return response()->json(['Countries' => $dataArray]);
+        } else {
+            $response = ['message' => 'Data not found'];
+            return response()->json($response, 404); // Adding HTTP status code for data not found
+        }
+    }
+
     // public function getData($country)
     // {
     //     $findCountry = country::where('name', $country)->first();
@@ -174,50 +337,4 @@ class ApiController extends Controller
     // }
 
     // 
-    public function getData($country)
-    {
-        $findCountry = Country::where('name', $country)->first();
-
-        if ($findCountry) {
-            $dataCollection = Description::where('countryDescription_id', $findCountry->id)
-                ->with('testDescription', 'testimg')
-                ->get();
-
-            $dataArray = [];
-            $dataArray['country'] = $findCountry->name;
-            $dataArray['countryImage'] = url(asset('storage/' . $findCountry->logo));
-            $dataArray['descriptions'] = [];
-            foreach ($dataCollection as $data) {
-                $dataFetch = [
-                    'id' => $data->d_id,
-                    'title' => $data->description,
-                    'subdescription' => $data->sub_description ?? [],
-                    'videoLink' => $data->video->v_link,
-                    'readingText' => [],
-                    'images' => [],
-                ];
-                if ($data->testDescription) {
-                    foreach ($data->testDescription as $readingText) {
-                        $dataFetch['readingText'][] = $readingText->description;
-                    }
-                }
-                if ($data->testimg) {
-                    foreach ($data->testimg as $image) {
-
-                        // $dataImage = url(asset('storage/' . $image->images));
-                        $dataFetch['images'][] = [
-                            'title' => $image->title,
-                            'image' => url(asset('storage/' . $image->images)),
-                        ];
-                    }
-                }
-                array_push($dataArray['descriptions'], $dataFetch);
-            }
-            return response()->json(['data' => $dataArray]);
-        } else {
-            $response = ['message' => 'Data not found'];
-            return response()->json($response, 404); // Adding HTTP status code for data not found
-        }
-    }
-
 }

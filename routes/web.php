@@ -10,15 +10,18 @@ use App\Models\description;
 use Illuminate\Support\Facades\Route;
 
 route::get('/', [HomepageController::class, 'home'])->name('home');
-
+Route::get('/linkstorage', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'storage linked!';
+});
 
 route::get('/login', [AuthController::class, 'loginDisplay'])->name('loginDisplay');
 route::post('/login', [AuthController::class, 'login'])->name('logging');
 
 
 
-route::get('/register', [AuthController::class, 'registerDisplay'])->name('registerDisplay');
-route::post('/register', [AuthController::class, 'registering'])->name('registering');
+// route::get('/register', [AuthController::class, 'registerDisplay'])->name('registerDisplay');
+// route::post('/register', [AuthController::class, 'registering'])->name('registering');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -95,8 +98,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::get('/welcome/pages', [PageController::class, 'addPage'])->name('addPages');
         route::post('/welcome/pages/', [PageController::class, 'postPage'])->name('postPages');
         route::get('/view/welcomepages/', [PageController::class, 'viewPage'])->name('viewpages');
+        route::get('/edit/welcomepages/', [PageController::class, 'editPage'])->name('editpages');
+        route::post('/update/welcomepages/', [PageController::class, 'updatePage'])->name('updatepages');
+        route::get('/delete/welcomepages/', [PageController::class, 'deletePage'])->name('deletepages');
 
 
+        route::get('/indexadd', [PageController::class, 'addIndex'])->name('addIndex');
+        route::post('/indexpost', [PageController::class, 'postIndex'])->name('postIndex');
+        route::get('/view/indexpages', [PageController::class, 'indexPage'])->name('indexPages');
+        route::get('/edit/indexpages/', [PageController::class, 'editIndex'])->name('editIndex');
+        route::post('/update/indexpages/', [PageController::class, 'updateIndex'])->name('updateIndex');
+        route::get('/delete/indexpages/', [PageController::class, 'deleteIndex'])->name('deleteIndex');
 
 
 

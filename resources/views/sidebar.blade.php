@@ -68,7 +68,7 @@
                     </a> </li>
             </ul>
         </li>
-        <li class="nav-item " id="page"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-journal-text"></i>
+        <li class="nav-item " id="page"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-incognito"></i>
             <p class="fw-bold">
                Welcome Pages
                 <i class="nav-arrow bi bi-chevron-right"></i>
@@ -76,12 +76,21 @@
         </a>
         <ul class="nav nav-treeview" id="addpage">
             <li class="nav-item"> <a href="{{route('admin.addPages')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
-                    <p>Add Welcome pages</p>
+                    <p>Add pages</p>
                 </a> </li>
         </ul>
         <ul class="nav nav-treeview" id="viewpage">
             <li class="nav-item"> <a href="{{route('admin.viewpages')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
-                    <p>View Welcome Pages</p>
+                    <p>View Pages</p>
+                </a> </li>
+        </ul>
+        <ul class="nav nav-treeview" id="addindex">
+            <li class="nav-item"> <a href="{{route('admin.addIndex')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
+                    <p>Add Welcome Page </p>
+                </a> </li>
+        </ul><ul class="nav nav-treeview" id="viewIndex">
+            <li class="nav-item"> <a href="{{route('admin.indexPages')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
+                    <p>View Welcome Page </p>
                 </a> </li>
         </ul>
     </li>
