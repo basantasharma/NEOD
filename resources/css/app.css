@@ -1,65 +1,193 @@
-.container{
+.navbar{
     position: sticky;
-   
+    background-color: white;
+    padding: 4px;
     
+
+
 }
-.background{
+.nav-link:hover{
+    color: black;
+    font-weight: 700;
+}
+
+.background {
     /* background: url("storage/frontpage/doremon.png"); */
     /* background: url("{{ asset('/img/frontpage/doremon.png') }}") no-repeat center; */
     background: url("/public/storage/frontpage/home1.jpeg") no-repeat center;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
-    background-position: 800px;}
+    background-position: 800px;
+}
 
-.language{
+.common-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+    
+ 
+}
+
+.common-title {
+    margin-bottom: 4.2rem;
+}
+
+
+.language {
     padding: 100px;
     color: blue;
 }
-.information{
+
+.information {
     margin-left: 100px;
-    
+
 }
-.text-left{
+
+.text-left {
     margin: 100px;
-   
-    
+
+
 }
-.about{
+
+.about {
     text-align: center;
     padding: 10px;
-    
+
 }
-.about-format{
+
+.about-format {
     display: flex;
     padding: 50px 150px;
 }
-.about-img{
+
+.about-img {
     margin: 10px;
-    
+
 }
-.about-content{
+
+.about-content {
     margin: 10px;
     font-size: 18px;
     font-weight: bold;
-  
+
 }
-.service{
-    background: url("/public/storage/service-img/neod.png")no-repeat center;
+
+.service {
+    background: url("/public/storage/service-img/")no-repeat center;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
 
 
 }
-.paragraph{
+
+.paragraph {
     text-align: center;
     padding: auto;
+
+}
+
+.service {
+    padding: 3rem 0 3rem 0;
+
+}
+
+.icon-span{
+    width: 2rem;
+    height: 2rem;
+   
     
 }
-.down{
-    background-color:rgb(37, 12, 61);
-    color: aliceblue;
+.carosel .card {
+    background-color: black;
+    color: blueviolet;
+    transition: all 0.3s linear;
+}
 
+.carosel-inner .card p {
+    color: bisque;
+}
+
+.carousel-inner .card:hover {
+    background-color: rgb(187, 187, 225);
+    color: black;
+}
+
+.carosel-inner .card:hover p {
+    color: black;
 
 }
+
+.fa-star {
+    color: blueviolet;
+}
+
+.contact-section .common-title {
+    padding-top: 10rem;
+}
+
+.contact-section .form-section {
+    width: 100%;
+}
+
+
+.contact-section .form-section {
+    width: 100%;
+    background-color: black;
+}
+
+.button-type:hover {
+    background-color: blue;
+    color: aliceblue;
+}
+
+
+.main-footer-section {
+    padding: 0 0 4rem 0;
+    background-color: rgb(14, 14, 58);
+   
+
+}
+.footer-links{
+    text-align: right;
+}
+
+.contact-div {
+    background-color: rgb(14, 14, 58);
+    color: white;
+}
+
+.icon-div {
+    width: 3.5rem;
+    height: 3.5rem;
+    width: 5rem;
+    height: 5rem;
+   
+}
+
+.icon-span {
+    width: 8rem;
+    height: 3rem;
+  ;
+    
+    
+}
+
+.icon-span .fa-brands,
+.fab {
+    color: white;
+}
+.containers{
+    background-color:  rgb(14, 14, 58);
+    color: white;
+}
+.arrow{
+    position: fixed;
+    background-color: blue;
+    color: black;
+   
+   
+    
+}
+
