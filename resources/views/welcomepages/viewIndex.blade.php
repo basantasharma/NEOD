@@ -17,18 +17,16 @@
         <tr>
             <th class="text-warning">Title</th>
             <th class="text-warning">Description</th>
-            <th class="text-warning">Image</th>
+         
             <th class="text-warning">Action</th>
         </tr>
        @foreach ($pagedata as $item)
        <tr>
         <td>{{$item->title}}</td>
         <td>{{$item->description}}</td>
-        <td class="col-5"><img src="{{asset('storage/'. $item->image)}}" style="height: 130px; width:130px;" alt="..."></td>
-        <td> 
-            
-            <a href="{{route('admin.editpages')}}?id={{ $item ->id}}"><button class="bg-primary">Edit</button></a>
-            <a href="{{route('admin.deletepages')}}?id={{ $item ->id}}"> <button class="bg-danger">Delete</button></a>        
+        <td>  
+            <a href="{{route('admin.editIndex')}}?id={{ $item ->id}}"><button class="bg-primary">Edit</button></a>
+            <a href="{{route('admin.deleteIndex')}}?id={{ $item ->id}}"> <button class="bg-danger">Delete</button></a>        
         </td>
     </tr>
        @endforeach
@@ -40,7 +38,7 @@
     },3000)  
     
     var x=  document.getElementById('page').classList.add("menu-open");
-        var xy=  document.getElementById('viewpage').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
+        var xy=  document.getElementById('viewIndex').classList.add("menu-open","bg-secondary" ,"bg-opacity-25","text-light","rounded");
         console.log(x);
         console.log(xy);
     </script>

@@ -14,7 +14,7 @@
 <div class="col-2 d-flex justify-content-center">
 
     <a href="{{route('loginDisplay')}}" class="d-flex justify-conteny-end text-decoration-none"><li class="btn btn-success me-2 border border-3 border-success fw-bold">Login</li></a>
-    <a href="{{route('registerDisplay')}}" class="d-flex justify-conteny-end text-decoration-none"><li class="btn btn-primary border border-3 border-primary fw-bold">Register</li></a>
+    {{-- <a href="{{route('registerDisplay')}}" class="d-flex justify-conteny-end text-decoration-none"><li class="btn btn-primary border border-3 border-primary fw-bold">Register</li></a> --}}
 </div>
 </nav>
 
