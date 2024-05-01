@@ -1,16 +1,3 @@
-.navbar{
-    position: sticky;
-    background-color: white;
-    padding: 4px;
-    
-
-
-}
-.nav-link:hover{
-    color: black;
-    font-weight: 700;
-}
-
 .background {
     /* background: url("storage/frontpage/doremon.png"); */
     /* background: url("{{ asset('/img/frontpage/doremon.png') }}") no-repeat center; */
@@ -20,13 +7,23 @@
     background-attachment: fixed;
     background-position: 800px;
 }
-
+.show-dis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* Number of lines to show */
+    line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+.card-text {
+    overflow-y: scroll;
+}
+/* 
 .common-heading {
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0.01rem;
-    
- 
+
+
 }
 
 .common-title {
@@ -37,10 +34,12 @@
 .language {
     padding: 100px;
     color: blue;
+
 }
 
 .information {
     margin-left: 100px;
+
 
 }
 
@@ -58,6 +57,7 @@
 
 .about-format {
     display: flex;
+    gap: 10;
     padding: 50px 150px;
 }
 
@@ -66,21 +66,22 @@
 
 }
 
+.size {
+    height: 400px;
+    width: 500px;
+
+}
+
 .about-content {
-    margin: 10px;
+    margin: 5px;
     font-size: 18px;
-    font-weight: bold;
-
-}
-
-.service {
-    background: url("/public/storage/service-img/")no-repeat center;
-    min-height: 500px;
-    background-size: cover;
-    background-attachment: fixed;
+    text-align: center;
+    font-weight: 400;
 
 
 }
+
+
 
 .paragraph {
     text-align: center;
@@ -93,24 +94,26 @@
 
 }
 
-.icon-span{
+
+.icon-span {
     width: 2rem;
     height: 2rem;
-   
-    
+
+
 }
-.carosel .card {
-    background-color: black;
-    color: blueviolet;
-    transition: all 0.3s linear;
+
+.card:hover{
+    background-color: rgb(187, 187, 225);
+    color: black;
+
 }
 
 .carosel-inner .card p {
-    color: bisque;
+    color: white;
 }
 
 .carousel-inner .card:hover {
-    background-color: rgb(187, 187, 225);
+    background-color: rgb(79, 79, 107);
     color: black;
 }
 
@@ -128,29 +131,29 @@
 }
 
 .contact-section .form-section {
-    width: 100%;
+    width: 50%;
 }
 
-
-.contact-section .form-section {
-    width: 100%;
-    background-color: black;
+.button {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.button-type:hover {
+.button:hover {
     background-color: blue;
-    color: aliceblue;
+    color: white;
 }
 
 
 .main-footer-section {
-    padding: 0 0 4rem 0;
+    padding: 0 0 2rem 0;
     background-color: rgb(14, 14, 58);
-   
+
 
 }
-.footer-links{
-    text-align: right;
+
+.footer-links {
+    text-align: center;
 }
 
 .contact-div {
@@ -163,31 +166,67 @@
     height: 3.5rem;
     width: 5rem;
     height: 5rem;
-   
+
 }
 
 .icon-span {
     width: 8rem;
     height: 3rem;
-  ;
-    
-    
+    ;
+
+
 }
 
 .icon-span .fa-brands,
 .fab {
     color: white;
 }
-.containers{
-    background-color:  rgb(14, 14, 58);
+
+.containers {
+    background-color: rgb(14, 14, 58);
     color: white;
-}
-.arrow{
-    position: fixed;
-    background-color: blue;
-    color: black;
-   
-   
-    
+    margin-left: 8px;
 }
 
+.arrow {
+    position: fixed;
+    margin-right: 300px;
+    background-color: blue;
+    color: black;
+
+
+
+}
+
+.address{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:998px) {
+    .navbar-toggler{
+        border-color: black;
+
+    }
+    .navbar-toggler-icon{
+        color: black;
+        background-color: aliceblue;
+    }
+    .language{
+        font-size: 2.4rem;
+    }
+    .information{
+        
+    }
+
+
+    
+}
+  
+     */
+
+
+
+
+    
