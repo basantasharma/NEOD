@@ -21,6 +21,17 @@
     line-clamp: 5;
     -webkit-box-orient: vertical;
 }
+.card:hover{
+    background-color: rgb(203, 203, 223);
+    color: black;
+
+}
+
+.button:hover {
+    background: blue;
+    color: aliceblue;
+   
+}
 
 /* 
 .common-heading {
