@@ -131,7 +131,7 @@
                     <img src="https://th.bing.com/th/id/R.2791354819a69655329906ad66a9417e?rik=TEpvaQTwTselwA&pid=ImgRaw&r=0" class="card-img-top object-fit-none " alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Australia</h5>
-                        <p class="card-text  lh-sm">Australia is a contemporary, democratic nation with excellent healthcare, top-notch educational institutions, and a unique geography. Studying in Australia is particularly a terrific option for students to advance their education and professional opportunities.</p>
+                        <p class="card-text show-less  lh-sm">Australia is a contemporary, democratic nation with excellent healthcare, top-notch educational institutions, and a unique geography. Studying in Australia is particularly a terrific option for students to advance their education and professional opportunities.</p>
                     </div>
 
                 </div>
@@ -141,7 +141,7 @@
                     <img src="https://th.bing.com/th/id/OIP.yVCLdzTyHr92-bXrFtZfUQHaE8?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Canada</h5>
-                        <p class="card-text  lh-sm overflow-scroll ">Studying in Canada is an intelligent investment for Nepalese students looking for a quality higher education and brighter career prospects. Canada is known for its diversity and affordable high quality education system that has made it the first choice for many international students all over the world.</p>
+                        <p class="card-text show-less lh-sm ">Studying in Canada is an intelligent investment for Nepalese students looking for a quality higher education and brighter career prospects. Canada is known for its diversity and affordable high quality education system that has made it the first choice for many international students all over the world.</p>
                     </div>
 
                 </div>
@@ -151,7 +151,7 @@
                     <img src="https://wonderfulengineering.com/wp-content/uploads/2015/04/UK-wallpaper.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in UK</h5>
-                        <p class="card-text ">The UK offers numerous reasons to study there, especially as an international student, which should be carefully considered before any commitment is made. We have enlisted some of the reasons why we study in the UK from Nepal.It is first choice for many international students all over the world.</p>
+                        <p class="card-text show-less">The UK offers numerous reasons to study there, especially as an international student, which should be carefully considered before any commitment is made. We have enlisted some of the reasons why we study in the UK from Nepal.It is first choice for many international students all over the world.</p>
                     </div>
 
                 </div>
@@ -161,7 +161,7 @@
                     <img src="https://media.istockphoto.com/photos/statue-of-liberty-and-american-flag-under-blue-sky-picture-id474645270?k=6&m=474645270&s=612x612&w=0&h=fDW16Nv5lzUxWJxArRT7Tov7Xpf12vVxLYUURrpCYwY=" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in USA</h5>
-                        <p class="card-text">The United States of America is one of the most popular study destinations around the world. These reports make it even more enticing for Nepalese students to make studying in the USA their primary choice. However, it becomes extremely important to understand various aspects of studying in the USA. </p>
+                        <p class="card-text show-less">The United States of America is one of the most popular study destinations around the world. These reports make it even more enticing for Nepalese students to make studying in the USA their primary choice. However, it becomes extremely important to understand various aspects of studying in the USA. </p>
                     </div>
 
                 </div>
@@ -170,8 +170,8 @@
                 <div class="card  shadow p-3 mb-5 bg-body-tertiary rounded">
                     <img src="https://th.bing.com/th/id/OIP.vdU815pvB4HBkC-fByJiZwHaE8?w=612&h=409&rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Study in New Zealand</h5>
-                        <p class="card-text">Excellent teaching methods, well-equipped labs, and well-qualified teachers—these are some of the best answers to Why study in New Zealand? New Zealand, a picturesque country providing a safe environment for international students along with some of the world's most recognised universities.</p>
+                        <h5 class="card-title ">Study in New Zealand</h5>
+                        <p class="card-text show-less">Excellent teaching methods, well-equipped labs, and well-qualified teachers—these are some of the best answers to Why study in New Zealand? New Zealand, a picturesque country providing a safe environment for international students along with some of the world's most recognised universities.</p>
                     </div>
 
                 </div>
@@ -182,7 +182,7 @@
                     <img src="https://th.bing.com/th/id/OIP.nvTez52E2Y2VAD8wUHlXYAHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Europe</h5>
-                        <p class="card-text">For centuries, education in Europe has been seen as a traditional experience that leads to modern career opportunities. On this page, we will explore what it is like to pursue higher education in Europe. Check out the best places to study in Europe, the cheapest places to study in Europe.</p>
+                        <p class="card-text show-less">For centuries, education in Europe has been seen as a traditional experience that leads to modern career opportunities. On this page, we will explore what it is like to pursue higher education in Europe. Check out the best places to study in Europe, the cheapest places to study in Europe.</p>
                     </div>
 
                 </div>
