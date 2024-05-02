@@ -14,9 +14,14 @@
     line-clamp: 10;
     -webkit-box-orient: vertical;
 }
-.card-text {
-    overflow-y: scroll;
+.show-less {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
+
 /* 
 .common-heading {
     font-size: 2rem;
