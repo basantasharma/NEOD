@@ -13,7 +13,7 @@ use app\Models\video;
 
 class ApiController extends Controller
 {
-    
+
     public function getData($country)
     {
         $findCountry = Country::where('name', $country)->first();
@@ -129,7 +129,7 @@ class ApiController extends Controller
             return response()->json($response, 404); // Adding HTTP status code for data not found
         }
     }
-    
+
     public function getCountryData($country)
     {
         $findCountry = Country::where('name', $country)->first();

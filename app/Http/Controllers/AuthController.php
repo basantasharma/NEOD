@@ -80,7 +80,6 @@ class AuthController extends Controller
             return redirect($route);
         } else
             return back()->with('fail', 'Invalid Email or Password');
-
     }
     public function logout()
     {
