@@ -94,7 +94,24 @@
                 </a> </li>
         </ul>
     </li>
-            </ul>
+    <li class="nav-item " id="logo"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-journal-text"></i>
+        <p class="fw-bold">
+           Logo
+            <i class="nav-arrow bi bi-chevron-right"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview" id="addLogo">
+        <li class="nav-item"> <a href="{{route('admin.addLogo')}}" class="nav-link"> <i class="nav-icon bi bi-plus-square"></i>
+                <p>Add Logo</p>
+            </a> </li>
+    </ul>
+    <ul class="nav nav-treeview" id="viewLogo">
+        <li class="nav-item"> <a href="{{route('admin.viewLogo')}}" class="nav-link"> <i class="nav-icon bi bi-view-list"></i>
+                <p>View Logo</p>
+            </a> </li>
+    </ul>
+</li>
+        </ul>
     </nav>
 </div>
 </aside> 

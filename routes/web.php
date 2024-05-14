@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
 use app\Http\Controllers\AdddetailsController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ViewdetailsController;
@@ -111,7 +112,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::get('/delete/indexpages/', [PageController::class, 'deleteIndex'])->name('deleteIndex');
 
 
-
-
+        route::get('/logo', [LogoController::class, 'addLogo'])->name('addLogo');
+        route::post('/postLogo', [LogoController::class, 'postLogo'])->name('postLogo');
+        route::get('/viewLogo', [LogoController::class, 'viewLogo'])->name('viewLogo');
+        route::get('/deleteLogo', [LogoController::class, 'deleteLogo'])->name('deleteLogo');
+        route::get('/editLogo', [LogoController::class, 'editLogo'])->name('editLogo');
+        route::post('/updateLogo', [LogoController::class, 'updateLogo'])->name('updateLogo');
     });
 });
