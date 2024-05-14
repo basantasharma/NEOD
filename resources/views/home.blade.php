@@ -36,7 +36,7 @@
 
         </div>
     </nav> -->
-    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+    <nav class="navbar navbar-expand-md bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('storage/logos/neodlogo.png') }}" alt="Bootstrap" width="auto" height="50">
@@ -107,27 +107,28 @@
                     At NEOD, we specialize in providing strategic consultancy services tailored to meet the unique needs of your organization. With a team of seasoned professionals boasting years of experience across various industries, we are committed to delivering actionable insights and sustainable solutions that propel your business to new heights.<br> You're seeking guidance on strategy development, operational optimization, or organizational transformation, NEOD is here to support you at every stage of your journey. Let us be your trusted advisor as you navigate the complexities of today's business landscape and unlock new opportunities for growth.
 
                     Contact us today to learn more about how we can help your organization thrive.</p>
-                <div class="button">
-                    <button class="button rounded">Contant us</button>
-
-                </div>
+            </div>
+            <div >
+                <button class="button rounded">Contant us</button>
 
             </div>
+
+
 
         </div>
     </div>
     <div class=" container mt-10">
 
         <div class="text-center fw-bold  mb-4">
-            <h2 >Wherever you want to go, we'll get you there forward.</h2>
-             <hr class="border border-primary border-1  opacity-75"> 
+            <h2>Wherever you want to go, we'll get you there forward.</h2>
+            <hr class="border border-primary border-1  opacity-75">
 
         </div>
     </div>
     <div class="container mt-5">
-        <div class="row px-5">
-            <div class="col-8 col-lg-4  ">
-                <div class="card  shadow p-3 mb-2 bg-body-tertiary rounded ">
+        <div class="row px-5 ">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card  shadow p-3 mb-3 bg-body-tertiary rounded ">
                     <img src="https://th.bing.com/th/id/R.2791354819a69655329906ad66a9417e?rik=TEpvaQTwTselwA&pid=ImgRaw&r=0" class="card-img-top object-fit-none " alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Australia</h5>
@@ -136,8 +137,8 @@
 
                 </div>
             </div>
-            <div class="col-8 col-lg-4   ">
-                <div class="card  shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-12 col-md-6 col-lg-4   ">
+                <div class="card  shadow p-3 mb-3 bg-body-tertiary rounded">
                     <img src="https://th.bing.com/th/id/OIP.yVCLdzTyHr92-bXrFtZfUQHaE8?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Canada</h5>
@@ -146,8 +147,8 @@
 
                 </div>
             </div>
-            <div class="col-8 col-lg-4 ">
-                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="card shadow p-3 mb-3 bg-body-tertiary rounded">
                     <img src="https://wonderfulengineering.com/wp-content/uploads/2015/04/UK-wallpaper.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in UK</h5>
@@ -156,8 +157,8 @@
 
                 </div>
             </div>
-            <div class="col-8 col-lg-4 ">
-                <div class="card  shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="card  shadow p-3 mb-3 bg-body-tertiary rounded">
                     <img src="https://media.istockphoto.com/photos/statue-of-liberty-and-american-flag-under-blue-sky-picture-id474645270?k=6&m=474645270&s=612x612&w=0&h=fDW16Nv5lzUxWJxArRT7Tov7Xpf12vVxLYUURrpCYwY=" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in USA</h5>
@@ -166,8 +167,8 @@
 
                 </div>
             </div>
-            <div class="col-8 col-lg-4  ">
-                <div class="card  shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-12 col-md-6 col-lg-4  ">
+                <div class="card  shadow p-3 mb-3 bg-body-tertiary rounded">
                     <img src="https://th.bing.com/th/id/OIP.vdU815pvB4HBkC-fByJiZwHaE8?w=612&h=409&rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title ">Study in New Zealand</h5>
@@ -177,8 +178,8 @@
                 </div>
             </div>
 
-            <div class="col-8 col-lg-4 ">
-                <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="card shadow p-3 mb-3 bg-body-tertiary rounded">
                     <img src="https://th.bing.com/th/id/OIP.nvTez52E2Y2VAD8wUHlXYAHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Study in Europe</h5>
@@ -192,7 +193,7 @@
 
 
     </div>
-    
+
 
 
 
@@ -232,7 +233,7 @@
                         <textarea class="form-control" id="FormControlTextarea1" required placeholder="Enter your message " rows="3"></textarea>
                     </div>
 
-                    <button type="submit" class="button rounded">Submit</button>
+                    <button type="submit" class="button rounded mb-5">Submit</button>
                 </form>
             </div>
         </div>
@@ -242,7 +243,7 @@
 
 
     <!-- <footer class="main-footer-section text-white"> -->
-    <footer class="row  d-flex justify-content-evenly p-4 bg-dark text-white ">
+    <footer class="row  d-flex justify-content-start p-4 bg-dark text-white ">
         <div class="col-12 col-sm-6 col-md-4 col-lg-4 ">
             <h5>Gangotri marga,Bharatpur-1</h5>
             <h5>Chitwan,Nepal</h5>
@@ -251,14 +252,7 @@
                 <li><i class="fa-solid fa-phone pe-3"></i>+977 9874562587</li>
             </ul>
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 ">
-            <h5>Gangotri marga,Bharatpur-1</h5>
-            <h5>Chitwan,Nepal</h5>
-            <ul class="list-unstyled">
-                <li><i class="fa-solid fa-envelope pe-3"></i>info@neod.bsg.com.np</li>
-                <li><i class="fa-solid fa-phone pe-3"></i>+977 9874562587</li>
-            </ul>
-        </div>
+
         <div class="row ">
             <div class="  col-lg-8  col-12 ">
                 Copyright ©2024 All rights reserved.
