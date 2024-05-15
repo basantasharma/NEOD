@@ -51,6 +51,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::get('/videolink/delete/{id}', [ViewdetailsController::class, 'deleteVideo'])->name('deleteVideo');//delete....
         route::get('/edit-videolink', [ViewdetailsController::class, 'editVideoLink'])->name('editVideoLink');//edit..........
         route::post('/update/videolink/{id}', [ViewdetailsController::class, 'updateVideoLink'])->name('updateVideoLink');//update......
+        route::get('/editVideo', [ViewdetailsController::class, 'editVideo'])->name('editVideo');
 
 
 
@@ -69,6 +70,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //DESCRITION ROUTES.................................................................
 
         route::get('/adddescription', 'App\Http\Controllers\AdddetailsController@adddescription')->name('description');//get/view
+        route::get('/change/video', [ViewdetailsController::class, 'changeVideo'])->name('changeVideo');
+        route::post('/submit/video', [ViewdetailsController::class, 'submitVideo'])->name('submitVideo');
         route::post('/postdecription', 'App\Http\Controllers\AdddetailsController@postdescription')->name('postdescription');//post
         route::get('/viewDetails', [ViewdetailsController::class, 'viewDetails'])->name('viewDetails'); //viewList
         route::get('/deleteDetails/{d_id}', [ViewdetailsController::class, 'deleteDetails'])->name('deleteDetails'); //delete

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\logo;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class LogoController extends Controller
 {
@@ -19,13 +20,22 @@ class LogoController extends Controller
             'logo' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
         ]);
 
-        $image = time() . "neod." . $request->file('logo')->getClientOriginalExtension();
-        $path = $request->file('logo')->storeAs('public/logo/' . $image);
-        $newpath = str_replace('public/', '', $path);
+        // $images = "neodlogo." . $request->file('logo')->getClientOriginalExtension();
+        // $path = $request->file('logo')->storeAs('public/logos/' . $images);
+        // $newpath = str_replace('public/', '', $path);
+
+
+        // $neodlogo = pathinfo($request->file('logo')->getClientOriginalName(), PATHINFO_FILENAME);
+        // $images = $neodlogo . '.png';
+        // $path = $request->file('logo')->storeAs('public/logos/' . $images);
+        // $newpath = str_replace('public/', '', $path);
+
+        $image = 'neodlogo';
+        $imagePath = $request->file('logo')->storeAs('logos', $image . '.png', 'public');
 
         $logo = new logo;
         $logo->name = $request->name;
-        $logo->logoImage = $newpath;
+        $logo->logoImage = $imagePath;
         $saved = $logo->save();
 
         if ($saved) {
@@ -48,7 +58,6 @@ class LogoController extends Controller
         $id = $request->id;
 
         $del = logo::find($id);
-
         if (!is_null($del)) {
             $del->delete();
             return redirect()->back()->with('success', 'logo deleted successfully.');
@@ -63,13 +72,12 @@ class LogoController extends Controller
             'name' => 'required',
             'logo' => 'required|image|mimes:jpeg,jpg,png,gif,webp'
         ]);
-        $image = time() . "neod." . $request->file('logo')->getClientOriginalExtension();
-        $path = $request->file('logo')->storeAs('public/logo/' . $image);
-        $newpath = str_replace('public/', '', $path);
+        $image = 'neodlogo';
+        $imagePath = $request->file('logo')->storeAs('logos', $image . '.png', 'public');
 
         $logo = logo::find($id);
         $logo->name = $request->name;
-        $logo->logoImage = $newpath;
+        $logo->logoImage = $imagePath;
         $saved = $logo->save();
 
         if ($saved) {

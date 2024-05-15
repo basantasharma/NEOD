@@ -9,7 +9,9 @@ use App\Models\testimage;
 use App\Models\welcomeData;
 use App\Models\welcomePages;
 use Illuminate\Http\Request;
-use app\Models\video;
+use App\Models\video;
+use App\Models\logo;
+
 
 class ApiController extends Controller
 {
@@ -17,11 +19,11 @@ class ApiController extends Controller
     public function getData($country)
     {
         $findCountry = Country::where('name', $country)->first();
-
         if ($findCountry) {
             $dataCollection = Description::where('countryDescription_id', $findCountry->id)
                 ->with('testDescription', 'testimg')
                 ->get();
+
             $pageData = welcomePages::all();
             $welcome = welcomeData::all();
             $onboarding = [];
@@ -37,7 +39,6 @@ class ApiController extends Controller
             foreach ($welcome as $item) {
                 $dataWelcome = [
                     'title' => $item->title,
-                    // 'image' => url(asset('storage/' . $item->image)),
                     'description' => $item->description,
                 ];
                 array_push($welcomeData, $dataWelcome);
@@ -80,24 +81,32 @@ class ApiController extends Controller
         }
     }
 
+
+
     public function getPage()
     {
-
         $pageData = welcomePages::all();
-        if ($pageData) {
+        $logo = logo::all();
+
+        if ($pageData->isNotEmpty() && $logo->isNotEmpty()) {
             $onboarding = [];
-            foreach ($pageData as $item) {
+            $onboarding['pages'] = [];
+            foreach ($pageData as $key => $item) {
                 $dataWelcome = [
                     'title' => $item->title,
-                    'image' => url(asset('storage/' . $item->image)),
                     'description' => $item->description,
                 ];
-                array_push($onboarding, $dataWelcome);
+                if ($key === 0) {
+                    $dataWelcome['logo'] = url(asset('storage/' . $logo->first()->logoImage));
+                }
+
+                array_push($onboarding['pages'], $dataWelcome);
             }
+
             return response()->json(['onboarding' => $onboarding]);
         } else {
             $response = ['message' => 'Data not found'];
-            return response()->json($response, 404); // Adding HTTP status code for data not found    
+            return response()->json($response, 404);
         }
     }
 
@@ -173,6 +182,29 @@ class ApiController extends Controller
             return response()->json($response, 404); // Adding HTTP status code for data not found
         }
     }
+
+    // public function getPage()
+    // {
+
+    //     $pageData = welcomePages::all();
+    //     $logo = logo::all();
+    //     if ($pageData) {
+    //         $onboarding = [];
+    //         $onboarding['logo'] = $logo->logoImage;
+    //         foreach ($pageData as $item) {
+    //             $dataWelcome = [
+    //                 'title' => $item->title,
+    //                 'image' => url(asset('storage/' . $item->image)),
+    //                 'description' => $item->description,
+    //             ];
+    //             array_push($onboarding, $dataWelcome);
+    //         }
+    //         return response()->json(['onboarding' => $onboarding]);
+    //     } else {
+    //         $response = ['message' => 'Data not found'];
+    //         return response()->json($response, 404); // Adding HTTP status code for data not found    
+    //     }
+    // }
 
     // public function getData($country)
     // {

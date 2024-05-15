@@ -29,7 +29,7 @@
         <div class="col-7">
          {{-- <textarea name="Logo" id="Logo" rows="5" class="form-control" required></textarea> --}}
          <input type="file" class="form-control" name="logo" id="logo">
-         @error('Logo')
+         @error('logo')
          <span class="text-danger">{{$message}}</span>
          @enderror
         </div>

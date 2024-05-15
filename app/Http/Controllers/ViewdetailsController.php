@@ -224,42 +224,38 @@ class ViewdetailsController extends Controller
         }
     }
 
+    public function changeVideo(Request $request)
+    {
+        $id = $request->id;
+        $description = description::where('d_id', $id)->first();
+        $videoDes = video::all();
+        if ($description) {
+            $data = compact('description', 'videoDes');
+            return view('updateDetails.editVideo')->with($data);
+        } else {
+            return redirect()->back()->with('fail', 'Cannot be edited.');
+        }
+    }
+    public function submitVideo(Request $request)
+    {
+        $id = $request->id;
 
-
-    // .....................SUB DESCRIPTION .....................................................................
-
-    // public function viewSub($id)
-    // {
-    //     $sub = sub::find($id);
-    //     if (is_null($sub)) {
-    //         return view('viewDetails.viewallDescription')->with('fail', 'No Sub description Found');
-    //     } else {
-    //         $data = compact('sub');
-    //         return view('subdescription.subView')->with($data);
-    //     }
-    // }
-
-    // public function addSub($id)
-    // {
-    //     $data = compact('id');
-    //     return view('subdescription.addsub')->with($data);
-    // }
-
-    // public function postSub($id, Request $request)
-    // {
-    //     $request->validate([
-    //         'subdescription' => 'required| min:5',
-    //     ]);
-
-    //     $subdes = new sub;
-    //     $subdes->description = $request->subdescription;
-    //     $save = $subdes->save();
-    //     if ($save) {
-    //         return redirect()->back()->with('success', 'Sub Description added Successfully.');
-    //     } else {
-    //         return redirect()->back()->with('fail', 'Unsuccessfull to add.');
-    //     }
-    // }
+        $request->validate([
+            'video' => 'required',
+        ]);
+        $submit = description::where('d_id', $id)->first();
+        if ($submit) {
+            $submit->v_id = $request->video;
+            $saved = $submit->save();
+            if ($saved) {
+                return redirect()->back()->with('success', 'Successfully changed.');
+            } else {
+                return redirect()->back()->with('failed', 'Unsuccessful change.');
+            }
+        } else {
+            return redirect()->back()->with('failed', 'No matching record found.');
+        }
+    }
 }
 
 
