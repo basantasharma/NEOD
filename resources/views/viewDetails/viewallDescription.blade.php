@@ -31,7 +31,7 @@
             @foreach($allDetails as $item)  
             <td>{{$item->country->name}}</td>
             <td>{{$item->description}}</td>   
-            <td>{{$item->video->name}}</td>   
+            <td>{{$item->video->name}} <a href="{{route('admin.changeVideo')}}?id={{$item->d_id}}" class="text-primary">change</a> </td>   
             <td>{{$item->sub_description}}</td>    
             <td class="p-3">
               <a href="{{route('admin.addTestDescription')}}?id={{ $item->d_id }}"><button class="bg-success">Add</button></a>
