@@ -36,23 +36,21 @@
   <button type="submit" class="btn btn-success">Save</button>
 </div>
     </div>
+    <div id="videoStatus" class="align-items-center mt-5">
+      @if(Session::has('success'))
+      <div class="alert alert-success">
+        <p class="text-light text-small text-center align-items-center">{{session::get('success')}}</p>
+      </div>
+      @endif
+      
+        @if(Session::has('fail'))
+        <div class="alert alert-danger">
+          <p class="text-light text-small text-center align-items-center">{{session::get('fail')}}</p>
+        </div>
+        @endif
+      </div>
   </div><br>
-    {{-- <div class="d-flex justify-content-center"><button type="submit" class="btn btn-success">Save</button></div> --}}
-  </form>
-<div id="videoStatus" class="align-items-center">
-@if(Session::has('success'))
-<div class="alert alert-success">
-  <p class="text-light text-small text-center align-items-center">{{session::get('success')}}</p>
-</div>
-@endif
-
-  @if(Session::has('fail'))
-  <div class="alert alert-danger">
-    <p class="text-light text-small text-center align-items-center">{{session::get('fail')}}</p>
-  </div>
-  @endif
-</div>
-</div>
+    
 
 <script>
 setTimeout(function(){
