@@ -248,7 +248,7 @@ class ViewdetailsController extends Controller
             $submit->v_id = $request->video;
             $saved = $submit->save();
             if ($saved) {
-                return redirect()->back()->with('success', 'Successfully changed.');
+                return redirect()->route('admin.viewDetails')->with('success', 'Successfully changed.');
             } else {
                 return redirect()->back()->with('failed', 'Unsuccessful change.');
             }
