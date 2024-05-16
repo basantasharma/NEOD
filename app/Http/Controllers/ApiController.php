@@ -24,23 +24,48 @@ class ApiController extends Controller
                 ->with('testDescription', 'testimg')
                 ->get();
 
-            $pageData = welcomePages::all();
+            // $pageData = welcomePages::all();
+
+            // $logo = logo::all();
+            // $onboarding = [];
+
+            // if ($pageData->isNotEmpty() && $logo->isNotEmpty()) {
+            //     foreach ($pageData as $item) {
+            //         $dataWelcome = [
+            //             'title' => $item->title,
+            //             'image' => url(asset('storage/' . $item->image)),
+            //             'description' => $item->description,
+            //         ];
+            //         array_push($onboarding, $dataWelcome);
+            //     }
             $welcome = welcomeData::all();
-            $onboarding = [];
-            foreach ($pageData as $item) {
-                $dataWelcome = [
-                    'title' => $item->title,
-                    'image' => url(asset('storage/' . $item->image)),
-                    'description' => $item->description,
-                ];
-                array_push($onboarding, $dataWelcome);
+            $pageData = welcomePages::all();
+            $logo = logo::all();
+
+            if ($pageData->isNotEmpty() && $logo->isNotEmpty()) {
+                $onboarding = [];
+                // $onboarding['pages'] = [];
+                foreach ($pageData as $key => $item) {
+                    $dataWelcome = [
+                        'title' => $item->title,
+                        'description' => $item->description,
+                        'image' => url(asset('storage/' . $item->image))
+                    ];
+                    if ($key === 0) {
+                        $dataWelcome['logo'] = url(asset('storage/' . $logo->first()->logoImage));
+                    }
+
+                    array_push($onboarding, $dataWelcome);
+                }
             }
+
             $welcomeData = [];
             foreach ($welcome as $item) {
                 $dataWelcome = [
                     'title' => $item->title,
                     'description' => $item->description,
                 ];
+                $dataWelcome['logo'] = url(asset('storage/' . $logo->first()->logoImage));
                 array_push($welcomeData, $dataWelcome);
             }
 
@@ -90,17 +115,18 @@ class ApiController extends Controller
 
         if ($pageData->isNotEmpty() && $logo->isNotEmpty()) {
             $onboarding = [];
-            $onboarding['pages'] = [];
+            // $onboarding['pages'] = [];
             foreach ($pageData as $key => $item) {
                 $dataWelcome = [
                     'title' => $item->title,
                     'description' => $item->description,
+                    'image' => url(asset('storage/' . $item->image))
                 ];
                 if ($key === 0) {
                     $dataWelcome['logo'] = url(asset('storage/' . $logo->first()->logoImage));
                 }
 
-                array_push($onboarding['pages'], $dataWelcome);
+                array_push($onboarding, $dataWelcome);
             }
 
             return response()->json(['onboarding' => $onboarding]);
@@ -113,6 +139,7 @@ class ApiController extends Controller
     public function mainPage()
     {
         $findCountry = Country::all();
+        $logo = logo::all();
 
         if ($findCountry) {
             $welcome = welcomeData::all();
@@ -122,6 +149,7 @@ class ApiController extends Controller
                     'title' => $item->title,
                     'description' => $item->description,
                 ];
+                $dataWelcome['logo'] = url(asset('storage/' . $logo->first()->logoImage));
                 array_push($welcomeData, $dataWelcome);
             }
             $dataArray = [];
