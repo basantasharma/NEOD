@@ -6,7 +6,7 @@ use App\Models\User;
 use illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Http\Request;
-use App\models\country;
+use App\Models\country;
 
 class AuthController extends Controller
 {
