@@ -112,7 +112,7 @@
         </div> <!--end::App Content-->
     </main> <!--end::App Main-->
     <script>
-        var x=  document.getElementById('dashboard').classList.add("active");;
-              console.log(x);
+        var x=  document.getElementById('dashboard').classList.add("active");
+            //   console.log(x);
     </script>
 @endsection

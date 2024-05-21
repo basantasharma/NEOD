@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use illuminate\Support\Facades\Auth;
+use Laravel\Sanctum\PersonalAccessToken;
 use Session;
 use Illuminate\Http\Request;
 use App\Models\country;
@@ -32,7 +33,6 @@ class AuthController extends Controller
         $users->email = $request->email;
         $users->password = \Hash::make($request->password);
         $save = $users->save();
-
         if ($save) {
             return view('loginform')->with('success', 'You are now registerd. Please login to proceed.');
             // return redirect()->route('loginDisplay')->with('success', 'You are now registerd. Please login to proceed.');
@@ -42,8 +42,10 @@ class AuthController extends Controller
     }
     public function homes()
     {
+
+        $usersData = user::all();
         $country = country::count();
-        $data = compact('country');
+        $data = compact('country', 'usersData');
         return view('dashboard')->with($data);
 
     }
@@ -75,9 +77,12 @@ class AuthController extends Controller
         ]);
 
         $creds = $request->only('email', 'password');
+
         if (Auth::attempt($creds)) {
             $route = $this->redirectDash();
             return redirect($route);
+
+
         } else
             return back()->with('fail', 'Invalid Email or Password');
     }

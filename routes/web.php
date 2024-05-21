@@ -6,6 +6,7 @@ use app\Http\Controllers\AdddetailsController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TokenController;
 use App\Http\Controllers\ViewdetailsController;
 use App\Models\description;
 use Illuminate\Support\Facades\Route;
@@ -121,5 +122,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         route::get('/deleteLogo', [LogoController::class, 'deleteLogo'])->name('deleteLogo');
         route::get('/editLogo', [LogoController::class, 'editLogo'])->name('editLogo');
         route::post('/updateLogo', [LogoController::class, 'updateLogo'])->name('updateLogo');
+
+        route::get('/tokenGenerate', [TokenController::class, 'tokenGenerate'])->name('tokenGenerate');
+
     });
 });
