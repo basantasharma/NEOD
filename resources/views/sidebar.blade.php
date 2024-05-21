@@ -5,7 +5,7 @@
 
 {{-- <hr> --}}
 <div class="sidebar-wrapper">
-    <nav class="mt-2"> <!--begin::Sidebar Menu-->
+    <nav class="mt-2">
    
         <ul class="nav sidebar-menu flex-column " data-lte-toggle="treeview" data-accordion="false">
             <li class="nav-item">       
@@ -14,6 +14,13 @@
                         <p class="fw-bold">Dashboard</p>
                     </a>
                 </a>
+            </li>
+            <li class="nav-item " > <a href="{{route('admin.tokenGenerate')}}" class="nav-link" id="token"> <i class="nav-icon bi bi-book text-warning  text-warning"></i>
+                <p class="fw-bold">
+                   Token
+                    {{-- <i class="nav-arrow bi bi-chevron-right"></i> --}}
+                </p>
+            </a>
             </li>
           
             <li class="nav-item" id="country"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-globe2 text-warning"></i>
@@ -111,6 +118,7 @@
             </a> </li>
     </ul>
 </li>
+
         </ul>
     </nav>
 </div>
