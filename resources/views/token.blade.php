@@ -1,9 +1,9 @@
 @extends('base')
 @section('content')
 <div class="mt-5 mb-4 d-flex justify-content-center">
-       <div>
+       {{-- <div>
         <small class=" p-1 "><button type="button" class=" me-4 bg-success">Generate New</button></small></a>
-       </div>
+       </div> --}}
        <div>
         <small class="border p-2">{{$token->token}}</small>
        </div>

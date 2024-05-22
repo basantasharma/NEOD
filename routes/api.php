@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/different/pages', [ApiController::class, 'getPage'])->name('differentPage');
 });
 
-Route::post("/getData/login", [ApiController::class, 'index']);
+// Route::post("/getData/login", [ApiController::class, 'index']);
 
 // Route::group(['middleware' => 'auth:sanctum'], function () {
 // });

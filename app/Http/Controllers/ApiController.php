@@ -21,26 +21,26 @@ use App\Models\User;
 class ApiController extends Controller
 {
 
-    function index(Request $request)
-    {
-        $creds = $request->only('email', 'password');
-        if (Auth::attempt($creds)) {
-            $user = Auth::user();
-            $token = $user->createToken('Neod')->plainTextToken;
+    // function index(Request $request)
+    // {
+    //     $creds = $request->only('email', 'password');
+    //     if (Auth::attempt($creds)) {
+    //         $user = Auth::user();
+    //         $token = $user->createToken('Neod')->plainTextToken;
 
-            $response = [
-                'user' => $user->name,
-                'token' => $token,
-                'message' => 'login successfull.'
-            ];
-            return response()->json($response, 200);
-        }
-        $response = [
-            'message' => 'Unauthorised user',
-        ];
-        return response()->json($response, 404);
+    //         $response = [
+    //             'user' => $user->name,
+    //             'token' => $token,
+    //             'message' => 'login successfull.'
+    //         ];
+    //         return response()->json($response, 200);
+    //     }
+    //     $response = [
+    //         'message' => 'Unauthorised user',
+    //     ];
+    //     return response()->json($response, 404);
 
-    }
+    // }
 
 
     public function getData($country)

@@ -34,6 +34,7 @@ class AuthController extends Controller
         $users->password = \Hash::make($request->password);
         $save = $users->save();
         if ($save) {
+            $users->createToken($users->name)->plainTextToken;
             return view('loginform')->with('success', 'You are now registerd. Please login to proceed.');
             // return redirect()->route('loginDisplay')->with('success', 'You are now registerd. Please login to proceed.');
         } else {
@@ -79,6 +80,9 @@ class AuthController extends Controller
         $creds = $request->only('email', 'password');
 
         if (Auth::attempt($creds)) {
+            $user = Auth::user();
+            // $token = $user->createToken('Neod')->plainTextToken;
+
             $route = $this->redirectDash();
             return redirect($route);
 
