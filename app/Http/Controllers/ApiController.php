@@ -2,39 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\country;
 use App\Models\description;
 use App\Models\testdescription;
 use App\Models\testimage;
 use App\Models\welcomeData;
 use App\Models\welcomePages;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Models\video;
 use App\Models\logo;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
+// use Auth;
 
 class ApiController extends Controller
 {
 
     function index(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return response([
-                'message' => ['These credentials do not match our records.']
-            ], 404);
+        $creds = $request->only('email', 'password');
+        if (Auth::attempt($creds)) {
+            $user = Auth::user();
+            $token = $user->createToken('Neod')->plainTextToken;
+
+            $response = [
+                'user' => $user->name,
+                'token' => $token,
+                'message' => 'login successfull.'
+            ];
+            return response()->json($response, 200);
         }
-
-        $token = $user->createToken('my-app-token')->plainTextToken;
-
         $response = [
-            'user' => $user,
-            'token' => $token
+            'message' => 'Unauthorised user',
         ];
-        return response($response, 201);
+        return response()->json($response, 404);
+
     }
+
+
     public function getData($country)
     {
         $findCountry = Country::where('name', $country)->first();

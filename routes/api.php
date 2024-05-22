@@ -20,13 +20,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/main/page/{token?}', [ApiController::class, 'mainPage'])->name('mainPage');
-    Route::get('/every/country/data/{country}/{token?}', [ApiController::class, 'getCountryData'])->name('countryData');
-    Route::get('/all/descriptions/{country}/{token?}', [ApiController::class, 'getData'])->name('countryDescription');
-    Route::get('/different/pages/{token?}', [ApiController::class, 'getPage'])->name('differentPage');
+    Route::get('/main/page', [ApiController::class, 'mainPage'])->name('mainPage');
+    Route::get('/every/country/data/{country}', [ApiController::class, 'getCountryData'])->name('countryData');
+    Route::get('/all/descriptions/{country}', [ApiController::class, 'getData'])->name('countryDescription');
+    Route::get('/different/pages', [ApiController::class, 'getPage'])->name('differentPage');
 });
 
-Route::get("/get/token", [ApiController::class, 'index']);
+Route::post("/getData/login", [ApiController::class, 'index']);
 
 // Route::group(['middleware' => 'auth:sanctum'], function () {
 // });
